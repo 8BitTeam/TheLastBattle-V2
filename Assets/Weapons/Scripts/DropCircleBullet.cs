@@ -5,26 +5,20 @@ using UnityEngine;
 
 public class DropCircleBullet : MonoBehaviour
 {
-
-    [SerializeField]
-    private int bulletAmount = 50;
-
+    public int bulletAmount = 50;
     private float startAngle = 0, endAngle = 360;
 
-    [SerializeField]
-    private float fireForceAmplitude = 20f;
-    [SerializeField]
-    private int bulletDamage = 1;
+    public float fireForceAmplitude = 20f;
+    public int bulletDamage = 1;
 
-    private AudioSource gunSound;
-    private bool isCanShoot = false;
+    public AudioSource gunSound;
+    public bool isCanShoot = false;
 
     // Start is called before the first frame update
     void Start()
     {
         gunSound = GetComponent<AudioSource>();
     }
-
 
     // Update is called once per frame
     void Update()
@@ -50,7 +44,7 @@ public class DropCircleBullet : MonoBehaviour
 
             var instanceBullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", transform.position, Quaternion.identity);
             Vector2 force = bulMoveVector.normalized * fireForceAmplitude;
-            instanceBullet.GetComponent<BulletController>().Shoot(
+            instanceBullet.GetComponent<Bullet>().Shoot(
                 force, bulletDamage,
                 gameObject,
                 gameObject.transform.parent.gameObject

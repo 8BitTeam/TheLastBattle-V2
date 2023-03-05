@@ -422,6 +422,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &487631796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8384735628470910511, guid: f594eb874b85962419eb486fecad5307, type: 3}
+  m_PrefabInstance: {fileID: 865837612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &487631801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487631796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01a7db1c970d8149b3e22cfce97404b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyCreep: {fileID: 0}
+  barrel: {fileID: 0}
+  distanceToNearestCreep: 0
+  shootDistance: 5
+  secondPerShoot: 0.01
+  FireForceAmplitude: 30
+  bulletDamage: 1
+  timer: {fileID: 0}
+  isCanShoot: 0
+  bulletAmount: 5
+  bulletAngle: 90
 --- !u!1 &530235307
 GameObject:
   m_ObjectHideFlags: 3
@@ -695,7 +723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8384735628470910507, guid: f594eb874b85962419eb486fecad5307, type: 3}
+    - {fileID: 3778488997698093920, guid: f594eb874b85962419eb486fecad5307, type: 3}
+    - {fileID: 4642787214417795546, guid: f594eb874b85962419eb486fecad5307, type: 3}
+    - {fileID: 2128892585674280407, guid: f594eb874b85962419eb486fecad5307, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f594eb874b85962419eb486fecad5307, type: 3}
 --- !u!4 &865837613 stripped
 Transform:
@@ -1012,6 +1044,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1232691677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2128892585674280406, guid: f594eb874b85962419eb486fecad5307, type: 3}
+  m_PrefabInstance: {fileID: 865837612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1232691682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232691677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736dbd1e6d7b623488ae0c6282824bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearbyCreep: {fileID: 0}
+  barrel: {fileID: 0}
+  distanceToNearestCreep: 0
+  shootDistance: 5
+  secondPerShoot: 0.01
+  FireForceAmplitude: 30
+  bulletDamage: 1
+  timer: {fileID: 0}
+  isCanShoot: 0
 --- !u!224 &1682686140 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4192272691101359362, guid: 3748f83510f12814f9d890bee0795269, type: 3}

@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 60832469525324861}
   - component: {fileID: 4306502650339895921}
   - component: {fileID: 2446012645494387342}
-  - component: {fileID: 5490385827842053294}
+  - component: {fileID: 8006869897384084676}
   m_Layer: 3
   m_Name: Mouth
   m_TagString: Untagged
@@ -186,7 +186,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5490385827842053294
+--- !u!114 &8006869897384084676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,14 +195,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 938340655496459564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ada0d0c6e4add254aa8067543fedb26c, type: 3}
+  m_Script: {fileID: 11500000, guid: d6edf7b54f77b0549b2598c0ca5304f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyCreep: {fileID: 0}
+  barrel: {fileID: 0}
+  distanceToNearestCreep: 0
   shootDistance: 5
   secondPerShoot: 1
   FireForceAmplitude: 5
   bulletDamage: 10
-  isCanShoot: 0
 --- !u!1 &4749215336943122159
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +403,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!60 &6881302964407268823
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -565,11 +568,13 @@ MonoBehaviour:
   bornPosition: {x: 0, y: 0, z: 0}
   timer: {fileID: 0}
   mainCamera: {fileID: 0}
-  healthBar: {fileID: 0}
   controlHealth: {fileID: 0}
   audioDeath: {fileID: 0}
+  healthBar: {fileID: 0}
   radiusAreaMoving: 3
   standDuration: 1
+  isTimerRun: 0
+  speedAction: 0
   attackPoint: {fileID: 0}
   attackRange: 0.5
   mainLayers:

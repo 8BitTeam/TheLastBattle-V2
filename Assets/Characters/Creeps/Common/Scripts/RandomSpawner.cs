@@ -63,67 +63,69 @@ public class RandomSpawner : MonoBehaviour
         max_x = f_max_x + bounce;
         min_y = f_min_y - bounce;
         max_y = f_max_y + bounce;
+
         if (spawnGoblinTimer.Finished)
         {
-            SpawnGob();
+            factory = new GoblinFactory();
+            SpawnCreep();
             spawnGoblinTimer.Run();
         }
         if (spawnWormTimer.Finished)
         {
-            SpawnWor();
+            factory = new WormFactory();
+            SpawnCreep();
             spawnWormTimer.Run();
         }
-        if (spawnGiantGoblinTimer.Finished)
-        {
-            SpawnGiantGob();
-            spawnGiantGoblinTimer.Run();
-        }
-        if (spawnChestTimer.Finished)
-        {
-            SpawnChest();
-            spawnChestTimer.Run();
-        }
+        //if (spawnGiantGoblinTimer.Finished)
+        //{
+        //    SpawnGiantGob();
+        //    spawnGiantGoblinTimer.Run();
+        //}
+        //if (spawnChestTimer.Finished)
+        //{
+        //    SpawnChest();
+        //    spawnChestTimer.Run();
+        //}
     }
 
-    private void SpawnGob()
-    {
-        Vector2 location_creep = SpawnPosition() ;
-        
-        //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-        //GameObject gob = Instantiate<GameObject>(prefabGoblin, location_creep, Quaternion.identity) as GameObject;
-        GameObject gob = ObjectPooler.Instance.SpawnFromPool("goblinCreep", location_creep, Quaternion.identity);
-        if (gob == null) return;
-    }
-
-    private void SpawnWor()
-    {
-        Vector2 location_creep = SpawnPosition();     
-        //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-        GameObject worm = ObjectPooler.Instance.SpawnFromPool("wormCreep", location_creep, Quaternion.identity);
-        if (worm == null) return;
-    }
-
-    private void SpawnGiantGob()
+    AbstractFactory factory;
+    private void SpawnCreep()
     {
         Vector2 location_creep = SpawnPosition();
-        //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-        GameObject worm = ObjectPooler.Instance.SpawnFromPool("giantGoblinCreep", location_creep, Quaternion.identity);
-        if (worm == null) return;
+        Creep creep = factory.CreateCreep(location_creep);
+        if (creep == null) return;
     }
 
-    private void SpawnChest()
-    {
-        Vector2 location_chest = SpawnPosition();
-        //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-        var random = Random.Range(0, 1);
-        var tag = "chest1";
-        if(random > 0.5)
-        {
-            tag = "chest1";
-        }
-        GameObject chest = ObjectPooler.Instance.SpawnFromPool(tag, location_chest, Quaternion.identity);
-        if (chest == null) return;
-    }
+    //private void SpawnWor()
+    //{
+    //    Vector2 location_creep = SpawnPosition();
+    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
+    //    AbstractFactory factory = new WormFactory();
+    //    Creep creep = factory.CreateCreep(location_creep);
+    //    if (creep == null) return;
+    //}
+
+    //private void SpawnGiantGob()
+    //{
+    //    Vector2 location_creep = SpawnPosition();
+    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
+    //    GameObject worm = ObjectPooler.Instance.SpawnFromPool("giantGoblinCreep", location_creep, Quaternion.identity);
+    //    if (worm == null) return;
+    //}
+
+    //private void SpawnChest()
+    //{
+    //    Vector2 location_chest = SpawnPosition();
+    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
+    //    var random = Random.Range(0, 1);
+    //    var tag = "chest1";
+    //    if(random > 0.5)
+    //    {
+    //        tag = "chest1";
+    //    }
+    //    GameObject chest = ObjectPooler.Instance.SpawnFromPool(tag, location_chest, Quaternion.identity);
+    //    if (chest == null) return;
+    //}
 
     private Vector2 SpawnPosition()
     {

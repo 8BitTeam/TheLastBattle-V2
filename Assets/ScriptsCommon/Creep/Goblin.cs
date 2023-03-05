@@ -7,7 +7,6 @@ public class Goblin : Creep
 {
     void Start()
     {
-
         health = 50;
         damage = 5;
         Speed = 2;
@@ -35,5 +34,17 @@ public class Goblin : Creep
 
         animator.SetTrigger("idle");
         controlHealth.SetMaxHealth((int)health);
+
+        attackPoint = transform.Find("AttackPoint");
+    }
+
+    public override void AttachMain()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, mainLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<MainAttackScript>().health -= damage;
+        }
     }
 }
