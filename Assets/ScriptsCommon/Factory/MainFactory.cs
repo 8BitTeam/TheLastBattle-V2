@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MainFactory : AbstractFactory
 {
-    public override Bullet CreateBullet()
+    public override Bullet CreateBullet(Vector3 position)
     {
-        GameObject bullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", transform.position, Quaternion.identity);
+        GameObject bullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", position, Quaternion.identity);
         return bullet.GetComponent<Bullet>();
     }
 
-    public override Creep CreateCreep()
+    public override Creep CreateCreep(Vector3 position)
     {
         throw new System.NotImplementedException();
     }

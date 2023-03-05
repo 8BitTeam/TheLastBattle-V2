@@ -45,7 +45,10 @@ public class Worm : Creep
         animator.SetTrigger("idle");
         controlHealth.SetMaxHealth((int)health);
     }
-
+    public override void AttachMain()
+    {
+        
+    }
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    GameObject colliGameObj = collision.gameObject;

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstractFactory : MonoBehaviour
+public abstract class AbstractFactory
 {
-    public abstract Bullet CreateBullet();
-    public abstract Creep CreateCreep();
+    public abstract Bullet CreateBullet(Vector3 position);
+    public abstract Creep CreateCreep(Vector3 position);
 }

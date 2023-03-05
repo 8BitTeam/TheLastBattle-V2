@@ -3,27 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CommonGunController : MonoBehaviour
+public abstract class MainGun : Gun
 {
-    private GameObject nearbyCreep;
-    private float distanceToNearestCreep;
-    [SerializeField]
-    private float shootDistance = 5;
-    [SerializeField]
-    private float secondPerShoot = 0.01f;
-    private Timer timer;
+    public GameObject nearbyCreep;
+    public Transform barrel;
 
-    // Start is called before the first frame update
+    public float distanceToNearestCreep;
+
     void Start()
     {
         // Start timer;
         timer = gameObject.AddComponent<Timer>();
         timer.Duration = secondPerShoot;
         timer.Run();
-    }
 
-    // Update is called once per frame
-    Vector2 lookDirection;
+        barrel = ScreenHelper.FindChildWithTag(gameObject, "gunBarrel").transform;
+        factory = new MainFactory();
+    }
 
     void Update()
     {
@@ -33,11 +29,10 @@ public class CommonGunController : MonoBehaviour
             lookDirection = nearbyCreep.transform.position - transform.position;
             transform.right = lookDirection;
         }
-
         CheckCanShoot();
     }
 
-    private (GameObject, float) FindNearestCreep()
+    public (GameObject, float) FindNearestCreep()
     {
         float minDistance = float.PositiveInfinity;
 
@@ -59,25 +54,25 @@ public class CommonGunController : MonoBehaviour
             }
         }
         return (nearestCreep, minDistance);
-
     }
+
     public Vector3 GetBarrelDirection()
     {
         GameObject barrel = ScreenHelper.FindChildWithTag(gameObject, "gunBarrel");
         return barrel.transform.position - transform.position;
     }
 
-    public bool isCanShoot = false;
-    private void CheckCanShoot()
+    public override void CheckCanShoot()
     {
         if (timer.Finished && distanceToNearestCreep <= shootDistance * shootDistance)
         {
-            isCanShoot = true;
+            Shoot();
             timer.Run();
         }
-        else
-        {
-            isCanShoot = false;
-        }
+    }
+
+    public override Vector3 GetShootDirection()
+    {
+        return barrel.position - transform.position;
     }
 }

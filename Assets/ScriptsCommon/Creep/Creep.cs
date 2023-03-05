@@ -87,9 +87,6 @@ public abstract class Creep : MonoBehaviour
         gameObject.transform.position = Vector2.MoveTowards(transform.position, main.transform.position, stepPerFrame);
     }
 
-
-
-
     private void RandomMovingAroundBornPos()
     {
         if (transform.position == destinationForRandomMove && !isTimerRun)
@@ -240,15 +237,7 @@ public abstract class Creep : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask mainLayers;
-    public void AttachMain()
-    {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, mainLayers);
-
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            enemy.GetComponent<MainAttackScript>().health -= damage;
-        }
-    }
+    public abstract void AttachMain();
 
     private void OnDrawGizmosSelected()
     {

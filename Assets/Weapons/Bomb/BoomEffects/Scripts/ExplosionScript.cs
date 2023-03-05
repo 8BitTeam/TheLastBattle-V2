@@ -16,18 +16,12 @@ public class ExplosionScript : MonoBehaviour
         Explode();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void Explode()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, fieldImpact, layerToHit);
         foreach (Collider2D obj in objects)
         {
-            var creep = obj.GetComponent<CreepMovingScript>();
+            var creep = obj.GetComponent<Creep>();
 
             if(creep != null)
             {

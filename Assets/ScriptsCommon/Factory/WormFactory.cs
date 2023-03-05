@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WormFactory : AbstractFactory
 {
-    public override Bullet CreateBullet()
+    public override Bullet CreateBullet(Vector3 position)
     {
-        GameObject worm = ObjectPooler.Instance.SpawnFromPool("fireball", transform.position, Quaternion.identity);
+        GameObject worm = ObjectPooler.Instance.SpawnFromPool("fireball", position, Quaternion.identity);
         return worm.GetComponent<Bullet>();
     }
 
-    public override Creep CreateCreep()
+    public override Creep CreateCreep(Vector3 position)
     {
-        GameObject worm = ObjectPooler.Instance.SpawnFromPool("wormCreep", transform.position, Quaternion.identity);
+        GameObject worm = ObjectPooler.Instance.SpawnFromPool("wormCreep", position, Quaternion.identity);
         return worm.GetComponent<Creep>();
     }
 }
