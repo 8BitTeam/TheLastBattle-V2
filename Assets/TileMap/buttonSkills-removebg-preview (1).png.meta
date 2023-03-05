@@ -1,0 +1,1113 @@
+fileFormatVersion: 2
+guid: 8eefd24197227804ca929736161017eb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 498
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eca6ed3364723d45afefb519229043b
+      internalID: -1946560112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 498
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566431c0b5edced408a38a5a642559d2
+      internalID: 338908364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_2
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 498
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9e8982e2d87be4abd07cd6f9f1d546
+      internalID: -968380087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 498
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa1dc4bd7a70cd4bb5ed267a50a379b
+      internalID: 1230514097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_4
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 498
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0981aa67c57ad2f4c8a142e55bd06f46
+      internalID: 1588944229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 444
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff64403897b2c754dbd9d0ca3184eb6f
+      internalID: 1739775392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_6
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 444
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85bd946d827943449f789e47e06bcaa
+      internalID: 82928396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 444
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6dfda07b539d343a1c38118f62aff3
+      internalID: -301504116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 444
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b4af774970d7042a4e85a868b8416e
+      internalID: 2010715509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_9
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 444
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8dc5dc0c42be940b53dae5e99e92b6
+      internalID: 580953766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 390
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f72cd885c0c48408fc2ce06ba80a76
+      internalID: -254801558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_11
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 390
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9d2c402897c3e44a521335965579e4
+      internalID: -1537237235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_12
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 390
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed97ed414bd6ad54e9608fe42f3cf840
+      internalID: -482126282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_13
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 390
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfdd60701d633244bb5dc3f7dcb2528
+      internalID: -333432732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_14
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 390
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f812fb081cdf96243b388960d15389e9
+      internalID: 515676680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 336
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36413d9080bc07d469bf970df820088e
+      internalID: 1976779102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_16
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 336
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74935aeabf654c4b86b3cc84860c308
+      internalID: -1515471326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_17
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 336
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105aa32a9e3282c44b10d4dd6c7f4a62
+      internalID: 728218342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_18
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 336
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d50a54f02681741a0d62dae66b0ce5
+      internalID: -1862935278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_19
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 336
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e305bc294dcd3014e8c264117fc9b0a7
+      internalID: 1919999491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_20
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 282
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eced541048f91a24b93b62081a0b493f
+      internalID: 1579206332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_21
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 282
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0c3d97329a19c4aa666263430e97af
+      internalID: 1285473683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_22
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 282
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c905b45722d00484bbfeeddb0b4abaf1
+      internalID: 379929945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_23
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 282
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df915fcaaa5016b468ed5a0eb8e8e938
+      internalID: -2124878570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_24
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 282
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1be3f5a1797cdc4881d8d08a98d782b
+      internalID: 799498905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_25
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 228
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f409e14b6c09f6940ac6eccf4d47dc12
+      internalID: 344302201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_26
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 228
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869afee5c332d3b4ead48e2a0d933daa
+      internalID: 522771986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_27
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 228
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b5e71f5a8a13649a442f817cdee6fb
+      internalID: -1952239768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_28
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 228
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11ddc40b2088974abb9da0e586ea544
+      internalID: -157037162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_29
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 228
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b139f506900dfe842ada999bd65973b7
+      internalID: -410580191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_30
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 174
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbff83b69896eaa468a85122a2250a93
+      internalID: -467695538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_31
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 174
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dff44357f4ccab418174182050ce474
+      internalID: -1927567864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_32
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 174
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4adc3fa620014e4682665baa0a6be8a
+      internalID: 858552852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_33
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 174
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404860cdf92bb1d4985d8edc153c59b9
+      internalID: 1096586815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_34
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 174
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577cc611aeae93043a854d7ab235f599
+      internalID: -1203033113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_35
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 120
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dabceafbf7524e4b8120dd9ae2749bc
+      internalID: -255633281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_36
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 120
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfeddf3d8a30e4f4fb5e5f5d59a2dd91
+      internalID: -1635065158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_37
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 120
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2c296729fc95c40993cbbae26e2659
+      internalID: -544666349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_38
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 120
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd34a43377ff6f45b7c622392aaf9b1
+      internalID: -1577286426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_39
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 120
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce1ac50446b7344bba424d5f319f220
+      internalID: -735960119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_40
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 66
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cd92c6fa04c5246bf9b9ef57615a63
+      internalID: 863069207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_41
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 66
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25580e633753174e99b5f31227b9eba
+      internalID: -219572844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_42
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 66
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9949240ccf6b884c820873a0adb5b8e
+      internalID: -499522148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_43
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 66
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811380c22f44bdf4bb6ca1476b9e22e6
+      internalID: 1221707411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttonSkills-removebg-preview (1)_44
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 66
+        width: 62
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6023e8a36fa0f7488593c386a102199
+      internalID: -194053895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      buttonSkills-removebg-preview (1)_24: 799498905
+      buttonSkills-removebg-preview (1)_18: -1862935278
+      buttonSkills-removebg-preview (1)_34: -1203033113
+      buttonSkills-removebg-preview (1)_44: -194053895
+      buttonSkills-removebg-preview (1)_39: -735960119
+      buttonSkills-removebg-preview (1)_26: 522771986
+      buttonSkills-removebg-preview (1)_43: 1221707411
+      buttonSkills-removebg-preview (1)_10: -254801558
+      buttonSkills-removebg-preview (1)_25: 344302201
+      buttonSkills-removebg-preview (1)_3: 1230514097
+      buttonSkills-removebg-preview (1)_15: 1976779102
+      buttonSkills-removebg-preview (1)_41: -219572844
+      buttonSkills-removebg-preview (1)_19: 1919999491
+      buttonSkills-removebg-preview (1)_1: 338908364
+      buttonSkills-removebg-preview (1)_12: -482126282
+      buttonSkills-removebg-preview (1)_22: 379929945
+      buttonSkills-removebg-preview (1)_7: -301504116
+      buttonSkills-removebg-preview (1)_9: 580953766
+      buttonSkills-removebg-preview (1)_21: 1285473683
+      buttonSkills-removebg-preview (1)_28: -157037162
+      buttonSkills-removebg-preview (1)_29: -410580191
+      buttonSkills-removebg-preview (1)_33: 1096586815
+      buttonSkills-removebg-preview (1)_37: -544666349
+      buttonSkills-removebg-preview (1)_38: -1577286426
+      buttonSkills-removebg-preview (1)_20: 1579206332
+      buttonSkills-removebg-preview (1)_30: -467695538
+      buttonSkills-removebg-preview (1)_42: -499522148
+      buttonSkills-removebg-preview (1)_8: 2010715509
+      buttonSkills-removebg-preview (1)_14: 515676680
+      buttonSkills-removebg-preview (1)_32: 858552852
+      buttonSkills-removebg-preview (1)_4: 1588944229
+      buttonSkills-removebg-preview (1)_31: -1927567864
+      buttonSkills-removebg-preview (1)_0: -1946560112
+      buttonSkills-removebg-preview (1)_5: 1739775392
+      buttonSkills-removebg-preview (1)_11: -1537237235
+      buttonSkills-removebg-preview (1)_27: -1952239768
+      buttonSkills-removebg-preview (1)_6: 82928396
+      buttonSkills-removebg-preview (1)_17: 728218342
+      buttonSkills-removebg-preview (1)_36: -1635065158
+      buttonSkills-removebg-preview (1)_40: 863069207
+      buttonSkills-removebg-preview (1)_35: -255633281
+      buttonSkills-removebg-preview (1)_13: -333432732
+      buttonSkills-removebg-preview (1)_2: -968380087
+      buttonSkills-removebg-preview (1)_23: -2124878570
+      buttonSkills-removebg-preview (1)_16: -1515471326
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

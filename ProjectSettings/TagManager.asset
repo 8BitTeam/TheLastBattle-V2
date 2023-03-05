@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - creep
+  - main
+  - gun
+  - gunBarrel
+  - bullet
+  - joystick
+  - ranged_creep
+  - coin
+  - main_health_bar
+  - virtual_cam
+  - item
+  - closechest
+  - sword
+  - openchest
+  - guninmain
+  - machinegun
+  - shotgun
+  - deadCreep
+  - main_mana_bar
+  - explosion
+  - bound_point
+  - aim
+  - fireball
+  - carry
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - creep
+  - Water
+  - UI
+  - gun
+  - eye
+  - Minimap
+  - main
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: onGround
+    uniqueID: 537016529
+    locked: 0
+  - name: weather
+    uniqueID: 2164699145
+    locked: 0
