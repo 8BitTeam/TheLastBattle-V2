@@ -198,9 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6edf7b54f77b0549b2598c0ca5304f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearbyCreep: {fileID: 0}
-  barrel: {fileID: 0}
-  distanceToNearestCreep: 0
   shootDistance: 5
   secondPerShoot: 1
   FireForceAmplitude: 5
@@ -579,7 +576,7 @@ MonoBehaviour:
   attackRange: 0.5
   mainLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1001 &6700610
 PrefabInstance:
   m_ObjectHideFlags: 0

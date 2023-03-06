@@ -81,12 +81,15 @@ public abstract class Creep : MonoBehaviour
         }
     }
 
+
+    // Thực hiện việc chạy lại gần Main (DK: Không chết)
     private void RunToMain(float speed)
     {
         stepPerFrame = Time.fixedDeltaTime * speed;
         gameObject.transform.position = Vector2.MoveTowards(transform.position, main.transform.position, stepPerFrame);
     }
 
+    // Thực hiện việc di chuyển xung quanh 1 điểm random bất kì trong bán kính cho trước khi vừa sinh ra (DK: không chết và main == null)
     private void RandomMovingAroundBornPos()
     {
         if (transform.position == destinationForRandomMove && !isTimerRun)
@@ -138,10 +141,13 @@ public abstract class Creep : MonoBehaviour
         return canRun == true;
     }
 
+    // Thực hiện hành động khi chết
     public void Die()
     {
         gameObject.tag = "deadCreep";
         SetCollider(false);
+
+        // Trạng thái của biến canRun == false để không di chuyển nữa, việc kiểm tra biến này nằm trong hàm Update
         canRun = false;
     }
 
@@ -245,6 +251,7 @@ public abstract class Creep : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+
     private void EnterCollisionWithExplosion(GameObject explosion)
     {
         if (explosion.CompareTag("explosion"))
@@ -268,6 +275,8 @@ public abstract class Creep : MonoBehaviour
         }
     }
 
+
+    // Kết thúc animation Dead thì hàm này kích hoạt và spawn ra item đồng thời tăng mana cho Main, cũng như biến mất
     public void EndDead()
     {
         gameObject.SetActive(false);
@@ -275,12 +284,15 @@ public abstract class Creep : MonoBehaviour
         RandomSpawnItems.SpawnItem(transform.position, Quaternion.identity);
     }
 
+    // Cuối animation bị đạn bắn thì hàm này được kích hoạt và biến canRUn được set thành true để quái tiếp tục di chuyển
     public void EndGetHit()
     {
         if (health > 0)
             canRun = true;
     }
 
+
+    // Khi mới bắt đầu bị đạn bắn vào thì con quái bị Stun nên biến canRun cũng được set thành false
     public void StartGetHit()
     {
         if (!ScreenHelper.CompareCurrentAnimationName(animator, "GetHit"))
