@@ -27,7 +27,6 @@ public class MainAttackScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         mana = new Mana(manaSpend);
         controlHealth = GameObject.FindGameObjectWithTag("main_health_bar").GetComponent<HealthBar>();
         controlHealth.SetMaxHealth(health);
