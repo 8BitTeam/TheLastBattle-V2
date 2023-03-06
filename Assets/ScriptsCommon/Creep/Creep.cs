@@ -5,7 +5,6 @@ using UnityEngine;
 
 public abstract class Creep : MonoBehaviour
 {
-
     public float health = 20;
     public int damage = 5;
 
@@ -75,7 +74,6 @@ public abstract class Creep : MonoBehaviour
             {
                 animator.SetTrigger("dead");
                 audioDeath.Play();
-
             }
             Die();
         }
