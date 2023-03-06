@@ -54,7 +54,7 @@ public class ObjectPooler : MonoBehaviour
             Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
             return null;
         }
-        if (poolDictionnary[tag].Peek().active == true)
+        if (poolDictionnary[tag].Peek().activeSelf == true)
         {
             return null;
         }
