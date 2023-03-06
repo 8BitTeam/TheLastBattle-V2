@@ -312,6 +312,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &2609955860233058670
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -449,16 +450,18 @@ MonoBehaviour:
   bornPosition: {x: 0, y: 0, z: 0}
   timer: {fileID: 0}
   mainCamera: {fileID: 0}
-  healthBar: {fileID: 0}
   controlHealth: {fileID: 0}
   audioDeath: {fileID: 0}
+  healthBar: {fileID: 0}
   radiusAreaMoving: 3
   standDuration: 1
+  isTimerRun: 0
+  speedAction: 0
   attackPoint: {fileID: 0}
   attackRange: 0.5
   mainLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1001 &4142513264880332118
 PrefabInstance:
   m_ObjectHideFlags: 0
