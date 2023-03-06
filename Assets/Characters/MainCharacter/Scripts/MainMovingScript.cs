@@ -60,7 +60,6 @@ public class MainMovingScript : MonoBehaviour
         {
             gameObject.AddComponent<MainSkillsScript>();
         }
-
     }
 
     // Update is called once per frame
