@@ -1,83 +1,49 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public abstract class Bullets : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
-    private GameObject nearbyCreep;
-    private float distanceToNearestCreep;
-    [SerializeField]
-    private float shootDistance = 5;
-    [SerializeField]
-    private float secondPerShoot = 0.01f;
-    private Timer timer;
+    public abstract void OnTriggerEnter2D(Collider2D collision);
 
-    // Start is called before the first frame update
-    void Start()
+    // Chỉ số giữ nguyên
+    public int damage = 10;
+    public float distanceCanFly = 20;
+
+    protected BulletType type;
+
+    public GameObject  shooter;
+    public Rigidbody2D bulletBody;
+    private Transform main;
+
+    public void Awake()
     {
-        // Start timer;
-        timer = gameObject.AddComponent<Timer>();
-        timer.Duration = secondPerShoot;
-        timer.Run();
+        main = GameObject.FindGameObjectWithTag("main").transform;
     }
 
-    // Update is called once per frame
-    Vector2 lookDirection;
-
-    void Update()
+    public void Shoot(Vector3 force, string bulletTypeKey, float damage, GameObject gun, GameObject shooter)
     {
-        (nearbyCreep, distanceToNearestCreep) = FindNearestCreep();
-        if (nearbyCreep != null)
-        {
-            lookDirection = nearbyCreep.transform.position - transform.position;
-            transform.right = lookDirection;
-        }
-
-        CheckCanShoot();
+        type = TypeFactory.Instance.GetBulletType(bulletTypeKey, damage, 20);
+        this.shooter = shooter;
+        bulletBody = GetComponent<Rigidbody2D>();
+        bulletBody.velocity = force;
     }
 
-    private (GameObject, float) FindNearestCreep()
+    public GameObject GetShooter()
     {
-        float minDistance = float.PositiveInfinity;
-
-        GameObject[] nearbyCreepList = GameObject.FindGameObjectsWithTag("creep");
-        if (nearbyCreepList.Count() == 0)
-        {
-            return (null, minDistance);
-        }
-        GameObject nearestCreep = nearbyCreepList[0];
-        foreach (GameObject creep in nearbyCreepList)
-        {
-            float distance = (transform.position - creep.transform.position).sqrMagnitude;
-            {
-                if (distance < minDistance)
-                {
-                    nearestCreep = creep;
-                    minDistance = distance;
-                }
-            }
-        }
-        return (nearestCreep, minDistance);
-
-    }
-    public Vector3 GetBarrelDirection()
-    {
-        GameObject barrel = ScreenHelper.FindChildWithTag(gameObject, "gunBarrel");
-        return barrel.transform.position - transform.position;
+        return shooter;
     }
 
-    public bool isCanShoot = false;
-    private void CheckCanShoot()
+    void FixedUpdate()
     {
-        if (timer.Finished && distanceToNearestCreep <= shootDistance * shootDistance)
+        DestroyIfFarAway();
+    }
+
+    private void DestroyIfFarAway()
+    {
+        if (Vector2.Distance(transform.position, main.position) >= distanceCanFly)
         {
-            isCanShoot = true;
-            timer.Run();
-        }
-        else
-        {
-            isCanShoot = false;
+            gameObject.SetActive(false);
         }
     }
 }
