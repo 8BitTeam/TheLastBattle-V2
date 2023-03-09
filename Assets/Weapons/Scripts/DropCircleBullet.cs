@@ -45,7 +45,7 @@ public class DropCircleBullet : MonoBehaviour
             var instanceBullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", transform.position, Quaternion.identity);
             Vector2 force = bulMoveVector.normalized * fireForceAmplitude;
             instanceBullet.GetComponent<Bullet>().Shoot(
-                force, bulletDamage,
+                force, "dropOBullet",bulletDamage,
                 gameObject,
                 gameObject.transform.parent.gameObject
             );

@@ -10,6 +10,10 @@ public class Goblin : Creep
         health = 50;
         damage = 5;
         Speed = 2;
+
+        // Lấy type từ factory
+        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1);
+
         animator = gameObject.GetComponent<Animator>();
         mainCamera = Camera.main;
         healthBar = transform.Find("ControlHealthCreep").gameObject;

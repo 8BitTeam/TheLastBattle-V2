@@ -10,13 +10,5 @@ public class MainBullet : Bullet
         {
             gameObject.SetActive(false);
         }
-    }
-
-    public override void DestroyIfFarAway()
-    {
-        if (Vector2.Distance(transform.position, gun.transform.position) >= distanceCanFly)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    }   
 }
