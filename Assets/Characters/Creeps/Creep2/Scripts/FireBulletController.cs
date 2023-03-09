@@ -68,7 +68,7 @@ public class FireBulletController : MonoBehaviour
         var instanceBullet = ObjectPooler.Instance.SpawnFromPool("fireball", transform.position, Quaternion.identity);
         if(instanceBullet != null) {
         instanceBullet.GetComponent<Bullet>().Shoot(
-            force, (int) bulletDamage,
+            force, "", bulletDamage,
             gameObject,
             gameObject.transform.parent.gameObject
             );

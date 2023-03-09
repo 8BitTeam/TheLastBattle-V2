@@ -54,7 +54,7 @@ public class ShootFireball : Gun
         if (instanceBullet != null)
         {
             instanceBullet.Shoot(
-                force, (int)bulletDamage,
+                force, "fireBallBullet", bulletDamage,
                 gameObject,
                 transform.parent.gameObject
                 );

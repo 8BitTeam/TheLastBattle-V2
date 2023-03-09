@@ -12,7 +12,7 @@ public class GatlingGun : MainGun
         Bullet instanceBullet = factory.CreateBullet(barrel.position);
         //ObjectPooler.Instance.SpawnFromPool("basicBullet", barrel.transform.position, Quaternion.LookRotation(Vector3.forward, GetShootDirection()));
         instanceBullet.Shoot(
-            force, bulletDamage,
+            force, "gatlingGunBullet", bulletDamage,
             gameObject,
             transform.parent.gameObject
             );

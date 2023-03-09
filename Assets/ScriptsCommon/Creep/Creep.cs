@@ -5,19 +5,21 @@ using UnityEngine;
 
 public abstract class Creep : MonoBehaviour
 {
+    // Chỉ số giữ nguyên
     public float health = 20;
     public int damage = 5;
-
     public float maxDistanceWithCamera = 25;
+    public float radiusAreaMoving = 3;
+    public float standDuration = 1;
+
+    // Thay thế đống chỉ số trên bằng FlyWeight.
+    protected CreepType type;
+
     public GameObject main;
     public float stepPerFrame = 0;
     public bool canRun = true;
     /**Animator để điều khiển animation tương ứng cho creep*/
     public Animator animator;
-    /// <summary>
-    /// Speed là tốc độ chạy của creep, phải set speed khi muốn creep di chuyển
-    /// </summary>
-   
     public float Speed;
     public bool isFacingRight = true;
 
@@ -26,17 +28,17 @@ public abstract class Creep : MonoBehaviour
     /** Born position để xác định tâm của vùng mà quái sẽ di chuyển linh tinh trong đó khi vừa sinh ra */
     public Vector3 bornPosition;
     public Timer timer;
-
     public Camera mainCamera;
 
     public HealthBar controlHealth;
     public AudioSource audioDeath;
     public GameObject healthBar;
 
-    public float radiusAreaMoving = 3;
     public Vector3? destinationForRandomMove = null;
-    public float standDuration = 1;
     public bool isTimerRun = false;
+
+    // Biến tạm, dùng để sử dụng tốc độ cho hàm di chuyển,
+    // bởi vì có những thời điểm tốc độ di chuyển về 0
     public float speedAction;
 
     //State

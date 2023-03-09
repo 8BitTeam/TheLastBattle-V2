@@ -32,7 +32,7 @@ public class ShotGun : MainGun
             Bullet instanceBullet = factory.CreateBullet(barrel.position);
 
             instanceBullet.Shoot(
-                force, bulletDamage,
+                force, "shotGunBullet", bulletDamage,
                 gameObject,
                 transform.parent.gameObject
             );
