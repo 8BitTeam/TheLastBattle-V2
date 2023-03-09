@@ -7,6 +7,7 @@ public class Goblin : Creep
 {
     void Start()
     {
+        
         health = 50;
         damage = 5;
         Speed = 2;

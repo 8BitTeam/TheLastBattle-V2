@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetHitState : State
+public class GetHitState : BaseState
 {
-    public override void EndState()
+    public override void EnterState(Creep creep)
     {
         throw new System.NotImplementedException();
     }
-
-    public override void StartState()
+    public override void ExitState(Creep creep)
     {
         throw new System.NotImplementedException();
     }
+    //public override void UpdateState(Creep creep)
+    //{
+    //    throw new System.NotImplementedException();
+    //}
 }

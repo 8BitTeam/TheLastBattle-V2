@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : BaseState
+public class WalkingState : BaseState
 {
     public override void EnterState(Creep creep)
     {
-        creep.speedAction = 0;
-        if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Idle"))
+        creep.speedAction = creep.Speed;
+        if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Walking"))
         {
-            creep.animator.SetTrigger("idle");
+            creep.animator.SetTrigger("walk");
         }
     }
 

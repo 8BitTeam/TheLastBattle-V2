@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : BaseState
+public class AttackState : BaseState
 {
     public override void EnterState(Creep creep)
     {
-        creep.speedAction = 0;
-        if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Idle"))
+        if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Attack"))
         {
-            creep.animator.SetTrigger("idle");
+            creep.animator.SetTrigger("attack");
         }
     }
-
     public override void ExitState(Creep creep)
     {
         throw new System.NotImplementedException();
     }
-
     //public override void UpdateState(Creep creep)
     //{
     //    throw new System.NotImplementedException();

@@ -42,7 +42,7 @@ public class Worm : Creep
         timer = gameObject.AddComponent<Timer>();
         timer.Duration = standDuration;
 
-        animator.SetTrigger("idle");
+        SwitchState(idleState);
         controlHealth.SetMaxHealth((int)health);
     }
     public override void AttachMain()
