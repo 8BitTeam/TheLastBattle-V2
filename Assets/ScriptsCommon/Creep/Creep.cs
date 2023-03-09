@@ -41,8 +41,24 @@ public abstract class Creep : MonoBehaviour
     // bởi vì có những thời điểm tốc độ di chuyển về 0
     public float speedAction;
 
+    //State
+    BaseState currentState;
+    public IdleState idleState = new IdleState();
+    public WalkingState walkingState = new WalkingState();
+    public AttackState attackState = new AttackState();
+    public GetHitState getHitState = new GetHitState();
+    public DeadState deadState = new DeadState();
+
+    //private void Awake()
+    //{
+    //    currentState = idleState;
+    //    currentState.EnterState(this);
+    //}
+
     private void FixedUpdate()
     {
+        //currentState.UpdateState(this);
+
         controlHealth.SetHeatlh((int)health);
         if (main == null)
         {
@@ -57,10 +73,7 @@ public abstract class Creep : MonoBehaviour
         if (main != null && canRun)
         {
             RunToMain(Speed);
-            if (!ScreenHelper.CompareCurrentAnimationName(animator, "Walking"))
-            {
-                animator.SetTrigger("walk");
-            }
+            SwitchState(walkingState);
             Vector2 facingDirection = main.transform.position - transform.position;
             ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
         }
@@ -72,15 +85,19 @@ public abstract class Creep : MonoBehaviour
 
         if (health <= 0)
         {
-            if (!ScreenHelper.CompareCurrentAnimationName(animator, "Death"))
-            {
-                animator.SetTrigger("dead");
-                audioDeath.Play();
-            }
+            SwitchState(deadState);
             Die();
         }
+
+        //currentState.UpdateState(this);
     }
 
+    //Chuyển đổi giữa các state
+    public void SwitchState(BaseState baseState)
+    {
+        currentState = baseState;
+        baseState.EnterState(this);
+    }
 
     // Thực hiện việc chạy lại gần Main (DK: Không chết)
     private void RunToMain(float speed)
@@ -96,20 +113,11 @@ public abstract class Creep : MonoBehaviour
         {
             timer.Run();
             isTimerRun = true;
-            speedAction = 0;
-            if (!ScreenHelper.CompareCurrentAnimationName(animator, "Idle"))
-            {
-                animator.SetTrigger("idle");
-            }
-
+            SwitchState(idleState);
         }
         if (destinationForRandomMove == null || (timer.Finished && isTimerRun))
         {
-            speedAction = Speed;
-            if (!ScreenHelper.CompareCurrentAnimationName(animator, "Walking"))
-            {
-                animator.SetTrigger("walk");
-            }
+            SwitchState(walkingState);
             destinationForRandomMove = new Vector2(
                 Random.Range(bornPosition.x - radiusAreaMoving, bornPosition.x + radiusAreaMoving),
                 Random.Range(bornPosition.y - radiusAreaMoving, bornPosition.y + radiusAreaMoving)
@@ -144,11 +152,7 @@ public abstract class Creep : MonoBehaviour
     // Thực hiện hành động khi chết
     public void Die()
     {
-        gameObject.tag = "deadCreep";
-        SetCollider(false);
-
-        // Trạng thái của biến canRun == false để không di chuyển nữa, việc kiểm tra biến này nằm trong hàm Update
-        canRun = false;
+        currentState.ExitState(this);
     }
 
     private float stepPerFrameStoring = 0;
@@ -180,7 +184,7 @@ public abstract class Creep : MonoBehaviour
     private int damageStoring = 0;
     private float speedStoring = 0;
 
-    private void SetCollider(bool isEnable)
+    public void SetCollider(bool isEnable)
     {
         var capsuleColli = GetComponent<CapsuleCollider2D>();
         var polyColli = GetComponent<PolygonCollider2D>();
@@ -232,10 +236,7 @@ public abstract class Creep : MonoBehaviour
         if (main.CompareTag("main"))
         {
             this.main = main;
-            if (!ScreenHelper.CompareCurrentAnimationName(animator, "Attack"))
-            {
-                animator.SetTrigger("attack");
-            }
+            SwitchState(attackState);
             canRun = false;
         }
     }
