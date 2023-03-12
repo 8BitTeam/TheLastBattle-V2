@@ -8,7 +8,8 @@ public class WormFireBallBullet : Bullet
     {
         if (collision.gameObject.CompareTag("main"))
         {
-            collision.gameObject.GetComponent<MainAttackScript>().health -= damage;
+            collision.gameObject.GetComponent<MainAttackScript>().health -= type.Damage;
+            this.PostEvent(EventID.OnMainHealthChange);
             gameObject.SetActive(false);
         }
     }

@@ -7,10 +7,10 @@ public abstract class Bullet : MonoBehaviour
     public abstract void OnTriggerEnter2D(Collider2D collision);
 
     // Chỉ số giữ nguyên
-    public int damage = 10;
-    public float distanceCanFly = 20;
+    //public int damage = 10;
+    //public float distanceCanFly = 20;
 
-    protected BulletType type;
+    public BulletType type;
 
     public GameObject  shooter;
     public Rigidbody2D bulletBody;
@@ -41,7 +41,7 @@ public abstract class Bullet : MonoBehaviour
 
     private void DestroyIfFarAway()
     {
-        if (Vector2.Distance(transform.position, main.position) >= distanceCanFly)
+        if (Vector2.Distance(transform.position, main.position) >= type.DistanceCanFly)
         {
             gameObject.SetActive(false);
         }

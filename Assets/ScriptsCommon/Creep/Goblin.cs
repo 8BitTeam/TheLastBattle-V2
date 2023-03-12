@@ -5,41 +5,11 @@ using UnityEngine;
 
 public class Goblin : Creep
 {
-    void Start()
+    protected override void InitSubClass()
     {
-        health = 50;
-        damage = 5;
-        Speed = 2;
-
         // Lấy type từ factory
-        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1);
-
-        animator = gameObject.GetComponent<Animator>();
-        mainCamera = Camera.main;
-        healthBar = transform.Find("ControlHealthCreep").gameObject;
-        controlHealth = healthBar.GetComponent<HealthBar>();
-
-        audioDeath = GetComponent<AudioSource>();
-        // Put the eye to the body
-        Eye = transform.Find("Eye").gameObject;
-        if (Eye == null)
-        {
-            // Kiếm con mắt trong kho assets;
-            Eye = (GameObject)Resources.Load(PrefabPath.CREEP_EYE);
-
-            // Gắn con mắt làm gameObject con
-            Eye.transform.parent = transform;
-        }
-        // Set born position
-        bornPosition = transform.position;
-
-        timer = gameObject.AddComponent<Timer>();
-        timer.Duration = standDuration;
-
-        animator.SetTrigger("idle");
-        controlHealth.SetMaxHealth((int)health);
-
-        attackPoint = transform.Find("AttackPoint");
+        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1, 50);
+        health = type.MaxHealth;
     }
 
     public override void AttachMain()
@@ -48,7 +18,8 @@ public class Goblin : Creep
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<MainAttackScript>().health -= damage;
+            enemy.GetComponent<MainAttackScript>().health -= type.Damage;
+            this.PostEvent(EventID.OnMainHealthChange);
         }
     }
 }
