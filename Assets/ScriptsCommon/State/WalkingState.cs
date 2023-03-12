@@ -6,7 +6,7 @@ public class WalkingState : BaseState
 {
     public override void EnterState(Creep creep)
     {
-        creep.speedAction = creep.Speed;
+        creep.speedAction = creep.type.Speed;
         if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Walking"))
         {
             creep.animator.SetTrigger("walk");

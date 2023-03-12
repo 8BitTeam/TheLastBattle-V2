@@ -7,10 +7,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainAttackScript : MonoBehaviour
 {
-    [SerializeField]
-    public int health = 100;
+    public float health = 100;
 
-    [SerializeField]
     public float manaSpend = 30f;
 
     private TextMeshProUGUI textHP, textMana;

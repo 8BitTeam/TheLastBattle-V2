@@ -9,13 +9,15 @@ public class CreepType
     public float Speed { get; private set; }
     public float RadiusAreaMoving { get; private set; }
     public float StandDuration { get; private set; }
+    public float MaxHealth { get; private set; }
 
-    public CreepType (int damage, float maxDistanceWithCamera, float speed, float radiusAreaMoving, float standDuration)
+    public CreepType (int damage, float maxDistanceWithCamera, float speed, float radiusAreaMoving, float standDuration, float maxHealth)
     {
         Damage = damage;
         MaxDistanceWithCamera = maxDistanceWithCamera;
         Speed = speed;
         RadiusAreaMoving = radiusAreaMoving;
         StandDuration = standDuration;
+        MaxHealth = maxHealth;
     }
 }
