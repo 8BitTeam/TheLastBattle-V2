@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public int coinscore;
-    public int health;
+    public float health;
     public float manaSpend;
 
     public PlayerData (MainAttackScript player,Score score)

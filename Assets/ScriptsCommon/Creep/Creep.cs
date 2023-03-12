@@ -5,22 +5,24 @@ using UnityEngine;
 
 public abstract class Creep : MonoBehaviour
 {
+    public abstract void AttachMain();
+    protected abstract void InitSubClass();
+
     // Chỉ số giữ nguyên
-    public float health = 20;
-    public int damage = 5;
-    public float maxDistanceWithCamera = 25;
-    public float radiusAreaMoving = 3;
-    public float standDuration = 1;
+    //public int damage = 5;
+    //public float maxDistanceWithCamera = 25;
+    //public float radiusAreaMoving = 3;
+    //public float standDuration = 1;
 
     // Thay thế đống chỉ số trên bằng FlyWeight.
-    protected CreepType type;
+    public CreepType type;
 
+    public float health;
     public GameObject main;
     public float stepPerFrame = 0;
     public bool canRun = true;
     /**Animator để điều khiển animation tương ứng cho creep*/
     public Animator animator;
-    public float Speed;
     public bool isFacingRight = true;
 
     /**Eye hoạt động như một radar, dùng để xác định nvat main khi đi vào trong vùng nhìn thấy của Eye*/
@@ -43,23 +45,49 @@ public abstract class Creep : MonoBehaviour
 
     //State
     BaseState currentState;
-    public IdleState idleState = new IdleState();
-    public WalkingState walkingState = new WalkingState();
-    public AttackState attackState = new AttackState();
-    public GetHitState getHitState = new GetHitState();
-    public DeadState deadState = new DeadState();
+    public BaseState idleState = new IdleState();
+    public BaseState walkingState = new WalkingState();
+    public BaseState attackState = new AttackState();
+    public BaseState getHitState = new GetHitState();
+    public BaseState deadState = new DeadState();
 
-    //private void Awake()
-    //{
-    //    currentState = idleState;
-    //    currentState.EnterState(this);
-    //}
+    void Start()
+    {
+        //currentState = idleState;
+        //currentState.EnterState(this);
+
+        // Thực hiện các phương thức khởi tạo ở các lớp con kế thừa
+        InitSubClass();
+
+        animator = gameObject.GetComponent<Animator>();
+        mainCamera = Camera.main;
+        healthBar = transform.Find("ControlHealthCreep").gameObject;
+        controlHealth = healthBar.GetComponent<HealthBar>();
+
+        audioDeath = GetComponent<AudioSource>();
+        // Put the eye to the body
+        Eye = transform.Find("Eye").gameObject;
+
+        // Set born position
+        bornPosition = transform.position;
+
+        timer = gameObject.AddComponent<Timer>();
+        timer.Duration = type.StandDuration;
+
+        animator.SetTrigger("idle");
+        controlHealth.SetMaxHealth(type.MaxHealth);
+
+        attackPoint = transform.Find("AttackPoint");
+
+        // Đặt trạng thái là idle
+        SwitchState(idleState);
+    }
 
     private void FixedUpdate()
     {
         //currentState.UpdateState(this);
 
-        controlHealth.SetHeatlh((int)health);
+        controlHealth.SetHeatlh(health);
         if (main == null)
         {
             RandomMovingAroundBornPos();
@@ -72,13 +100,13 @@ public abstract class Creep : MonoBehaviour
         }
         if (main != null && canRun)
         {
-            RunToMain(Speed);
+            RunToMain(type.Speed);
             SwitchState(walkingState);
             Vector2 facingDirection = main.transform.position - transform.position;
             ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
         }
 
-        if ((transform.position - mainCamera.transform.position).sqrMagnitude > maxDistanceWithCamera * maxDistanceWithCamera)
+        if ( Vector2.Distance(transform.position, mainCamera.transform.position) >type.MaxDistanceWithCamera)
         {
             gameObject.SetActive(false);
         }
@@ -119,8 +147,8 @@ public abstract class Creep : MonoBehaviour
         {
             SwitchState(walkingState);
             destinationForRandomMove = new Vector2(
-                Random.Range(bornPosition.x - radiusAreaMoving, bornPosition.x + radiusAreaMoving),
-                Random.Range(bornPosition.y - radiusAreaMoving, bornPosition.y + radiusAreaMoving)
+                Random.Range(bornPosition.x - type.RadiusAreaMoving, bornPosition.x + type.RadiusAreaMoving),
+                Random.Range(bornPosition.y - type.RadiusAreaMoving, bornPosition.y + type.RadiusAreaMoving)
             );
             isTimerRun = false;
         }
@@ -158,31 +186,21 @@ public abstract class Creep : MonoBehaviour
     private float stepPerFrameStoring = 0;
     private bool canRunStoring = true;
     private string tagStoring = "";
-    private float healthStoring = 0;
 
     private void OnEnable()
     {
-        healthStoring = health;
         stepPerFrameStoring = stepPerFrame;
         canRunStoring = canRun;
         tagStoring = gameObject.tag;
-        damageStoring = damage;
-        speedStoring = Speed;
     }
 
     private void OnDisable()
     {
-        health = healthStoring;
         stepPerFrame = stepPerFrameStoring;
         canRun = canRunStoring;
         gameObject.tag = tagStoring;
-        damage = damageStoring;
-        Speed = speedStoring;
         SetCollider(true);
     }
-
-    private int damageStoring = 0;
-    private float speedStoring = 0;
 
     public void SetCollider(bool isEnable)
     {
@@ -211,7 +229,7 @@ public abstract class Creep : MonoBehaviour
             shooterFromBullet = bulletGameObject.GetComponent<Bullet>().GetShooter();
             if (health > 0)
             {
-                health -= bulletGameObject.GetComponent<Bullet>().damage;
+                health -= bulletGameObject.GetComponent<Bullet>().type.Damage;
             }
             if (health <= 0)
             {
@@ -244,7 +262,6 @@ public abstract class Creep : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask mainLayers;
-    public abstract void AttachMain();
 
     private void OnDrawGizmosSelected()
     {

@@ -26,13 +26,13 @@ public class TypeFactory : MonoBehaviour
 
     public CreepType GetCreepType(string typeKey, int damage, float maxDistanceWithCam,
         float speed, float radiusAreaMoving,
-        float standDuration)
+        float standDuration, float maxHealth)
     {
         if (creepTypes.ContainsKey(typeKey)) return creepTypes[typeKey];
         else
         {
             CreepType type = new CreepType(damage, maxDistanceWithCam, speed,
-                radiusAreaMoving, standDuration);
+                radiusAreaMoving, standDuration, maxHealth);
             creepTypes.Add(typeKey, type);
             return type;
         };
