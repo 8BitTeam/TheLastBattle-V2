@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1204217215934222040}
   - component: {fileID: 1204217215934222023}
   - component: {fileID: 1204217215934222041}
+  - component: {fileID: 1851196033}
   m_Layer: 0
   m_Name: God
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MonoBehaviour:
   - tag: chest2
     prefab: {fileID: 951207049338560741, guid: 3f2c7855ca7a69c40afe8c6dd367435b, type: 3}
     size: 2
+  - tag: fireball
+    prefab: {fileID: 1516772723858027209, guid: b4bebe0c93a5adf4baa5d50e29bf5898, type: 3}
+    size: 10
+--- !u!114 &1851196033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204217215934222022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7297cc445d80b434e9d1e0ee589c8404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
