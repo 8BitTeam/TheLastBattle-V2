@@ -68,4 +68,27 @@ public class Mainmenu : MonoBehaviour
             change = false;
         }
     }
+    public void SaveGame()
+    {
+
+    }
+    void AddCreepToList()
+    {
+        GameObject[] listcreep = GameObject.FindGameObjectsWithTag("creep");
+        if (listcreep.Length != 0)
+        {
+            foreach (GameObject cre in listcreep)
+            {
+                if (cre.gameObject.GetComponent<Goblin>() != null)
+                {
+                    Goblin goblin = new Goblin();
+
+                }
+                //CreepLocationInfo creep = new CreepLocationInfo();
+                //creep.positionx = cre.transform.position.x;
+                //creep.positiony = cre.transform.position.y;
+                //creeps.Add(creep);
+            }
+        }
+    }
 }
