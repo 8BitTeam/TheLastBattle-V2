@@ -14,6 +14,7 @@ public class CoinScript : MonoBehaviour
     private Camera mainCamera;
 
     // Start is called before the first frame update
+
     void Start()
     {
         eye = transform.Find("Eye").GetComponent<EyeController>();
@@ -41,6 +42,7 @@ public class CoinScript : MonoBehaviour
         if (main != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, main.transform.position, Time.fixedDeltaTime * speed);
+            
         }
     }
 
@@ -49,6 +51,14 @@ public class CoinScript : MonoBehaviour
         if ((transform.position - mainCamera.transform.position).sqrMagnitude > maxDistanceWithCamera * maxDistanceWithCamera)
         {
             gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "main")
+        {
+            this.PostEvent(EventID.OnCoinCollect);
+            GetComponent<AudioSource>().Play();
         }
     }
 }

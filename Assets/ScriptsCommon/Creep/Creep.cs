@@ -282,6 +282,8 @@ public abstract class Creep : MonoBehaviour
     {
         gameObject.SetActive(false);
         GameObject.FindGameObjectWithTag("main").GetComponent<MainAttackScript>().GainMana(10);
+        //Change Mana by send EventID
+        this.PostEvent(EventID.OnManaChange);
         RandomSpawnItems.SpawnItem(transform.position, Quaternion.identity);
     }
 
