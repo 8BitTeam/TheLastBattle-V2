@@ -16,6 +16,7 @@ public class WormFireBallBullet : Bullet
         if (collision.gameObject.CompareTag("main"))
         {
             collision.gameObject.GetComponent<MainAttackScript>().health -= damage;
+            this.PostEvent(EventID.OnMainHealthChange);
             gameObject.SetActive(false);
         }
     }

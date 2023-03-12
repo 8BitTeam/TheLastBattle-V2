@@ -45,6 +45,7 @@ public class Goblin : Creep
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<MainAttackScript>().health -= damage;
+            this.PostEvent(EventID.OnMainHealthChange);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Assets.ScriptsCommon;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -23,6 +24,9 @@ public class MainAttackScript : MonoBehaviour
     
     public GameOverScreen gameOverScreen;
 
+    
+    
+    
     //HealthBar controlHealth;
     // Start is called before the first frame update
     void Start()
@@ -33,13 +37,27 @@ public class MainAttackScript : MonoBehaviour
         controlDisplayMana = GameObject.FindGameObjectWithTag("main_mana_bar").GetComponent<HealthBar>();
         controlDisplayMana.SetMaxHealth(Mana.MANA_MAX);
         score = GetComponent<Score>();
+
+        this.RegisterListener(EventID.OnMainHealthChange, (param)=>OnMainHealthChange());
+        this.RegisterListener(EventID.OnManaChange, (param) => OnMainManaChange());
+       
+    }
+
+    private void OnMainManaChange()
+    {
+        controlDisplayMana.SetHeatlh((int)Mathf.Floor(mana.GetMana()));
+    }
+
+    private void OnMainHealthChange()
+    {
+        controlHealth.SetHeatlh(health);
     }
 
     // Update is called once per frame
     void Update()
     {
-        controlHealth.SetHeatlh(health);
-        controlDisplayMana.SetHeatlh((int) Mathf.Floor(mana.GetMana()));
+        //controlHealth.SetHeatlh(health);
+        //controlDisplayMana.SetHeatlh((int) Mathf.Floor(mana.GetMana()));
         if (health <= 0)
         {
             health = 0;
