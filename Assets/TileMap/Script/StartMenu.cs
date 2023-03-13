@@ -23,7 +23,7 @@ public class StartMenu : MonoBehaviour
     }
     public void ContitnueGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3);
         Time.timeScale = 1;
 
         string saveMain = File.ReadAllText(Application.dataPath + "/savemain.txt");
@@ -35,6 +35,9 @@ public class StartMenu : MonoBehaviour
             main.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]);
             main.GetComponent<MainAttackScript>().manaSpend = int.Parse(inforMain[3]);
             StateNameController.scorecoin = int.Parse(inforMain[4]);
+
+            GameObject kok = Instantiate(main_prefabs, new Vector3(float.Parse(inforMain[0])-0.01f, float.Parse(inforMain[1])), Quaternion.identity);
+
         }
 
     }

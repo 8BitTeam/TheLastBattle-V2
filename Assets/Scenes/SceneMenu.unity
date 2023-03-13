@@ -390,6 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad98784a7ad66934db8c43596f53bac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main_prefabs: {fileID: 7290666580463162312, guid: 4636d4367c03c5e48b13535e903160c8, type: 3}
+  creep_prefabs: {fileID: 0}
 --- !u!1 &467612915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1854,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.99215686, g: 0.023529412, b: 0.023529412, a: 1}
     m_SelectedColor: {r: 0.8392157, g: 0.16078432, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
