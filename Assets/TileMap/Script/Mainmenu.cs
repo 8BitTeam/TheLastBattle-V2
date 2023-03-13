@@ -4,7 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-using Unity.Plastic.Newtonsoft.Json;
+using System;
+using Newtonsoft.Json;
 
 public class Mainmenu : MonoBehaviour
 {
@@ -14,16 +15,13 @@ public class Mainmenu : MonoBehaviour
     // Start is called before the first frame update
 
     private int currentScenceIndex;
-    GameObject main,machineGun,shotGun;
-    bool change = false;
 
+
+    
     List<CreepModel> listcreepjson = new List<CreepModel>();
     void Start()
     {
-        main = GameObject.FindGameObjectWithTag("main");
-        machineGun = GameObject.FindGameObjectWithTag("machinegun");
-        shotGun = GameObject.Find("ShotGun");
-        shotGun.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -55,29 +53,13 @@ public class Mainmenu : MonoBehaviour
         Time.timeScale = 1;
         pauseMenuScreen.SetActive(false);
     }
-    public void ShowClick()
-    {
-        if (!change)
-        {
-
-            machineGun.SetActive(false);
-            shotGun.SetActive(true);
-            change = true;
-        }
-        else
-        {
-
-            machineGun.SetActive(true);
-            shotGun.SetActive(false);
-            change = false;
-        }
-    }
+    
     public void SaveGame()
     {
         AddCreepToList();
         string data = "";
-        //JsonConvert
-       data = JsonConvert.SerializeObject(listcreepjson);
+        data = JsonConvert.SerializeObject(listcreepjson);
+      // data = JsonConvert.SerializeObject(listcreepjson);
         File.WriteAllText(Application.dataPath + "/savelistcreep.txt", data);
 
         GameObject main = GameObject.FindGameObjectWithTag("main");

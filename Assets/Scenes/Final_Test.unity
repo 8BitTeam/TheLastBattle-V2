@@ -876,11 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 1103232659}
     - target: {fileID: 2128892585674280406, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8384735628470910511, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8794591663250596865, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_RootOrder

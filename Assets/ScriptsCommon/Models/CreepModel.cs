@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class CreepModel
 {
-    private string name;
-    private float x, y;
-    private float health;
+    public string name;
+    public float x, y;
+    public float health;
 
     public string Name { get { return name; } set { name = value; } }
     public float X { get { return x; } set { x = value; } }
