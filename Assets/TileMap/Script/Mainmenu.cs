@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using Unity.Plastic.Newtonsoft.Json;
 
 public class Mainmenu : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Mainmenu : MonoBehaviour
     private int currentScenceIndex;
     GameObject main,machineGun,shotGun;
     bool change = false;
+
+    List<CreepModel> listcreepjson = new List<CreepModel>();
     void Start()
     {
         main = GameObject.FindGameObjectWithTag("main");
@@ -70,7 +74,26 @@ public class Mainmenu : MonoBehaviour
     }
     public void SaveGame()
     {
+        AddCreepToList();
+        string data = "";
+        //JsonConvert
+       data = JsonConvert.SerializeObject(listcreepjson);
+        File.WriteAllText(Application.dataPath + "/savelistcreep.txt", data);
 
+        GameObject main = GameObject.FindGameObjectWithTag("main");
+        string data2 = "";
+        if (main != null)
+        {
+            MainModel mainModel = new MainModel();
+            string x = main.gameObject.transform.position.x + "";
+            string y = main.gameObject.transform.position.y + "";
+            string health = main.gameObject.GetComponent<MainAttackScript>().health+"";
+            string mana = main.gameObject.GetComponent<MainAttackScript>().manaSpend+"";
+            
+            string score = StateNameController.scorecoin + "";
+            data2 = x + " " + y + " " + health + " " + mana + " " + score+" ";
+            File.WriteAllText(Application.dataPath + "/savemain.txt", data2);
+        }
     }
     void AddCreepToList()
     {
@@ -79,11 +102,20 @@ public class Mainmenu : MonoBehaviour
         {
             foreach (GameObject cre in listcreep)
             {
+                CreepModel model = new CreepModel();
+                model.Name = cre.gameObject.tag;
+                model.X = cre.gameObject.transform.position.x;
+                model.Y = cre.gameObject.transform.position.y;
+
                 if (cre.gameObject.GetComponent<Goblin>() != null)
                 {
-                    Goblin goblin = new Goblin();
-
+                    model.Health = cre.gameObject.GetComponent<Goblin>().health;  
                 }
+                else
+                {
+                    model.Health = cre.gameObject.GetComponent<Worm>().health;
+                }
+                listcreepjson.Add(model);
                 //CreepLocationInfo creep = new CreepLocationInfo();
                 //creep.positionx = cre.transform.position.x;
                 //creep.positiony = cre.transform.position.y;

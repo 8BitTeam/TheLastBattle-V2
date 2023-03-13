@@ -729,11 +729,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &651275889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7844640419698840982, guid: f07ef9e7a00882f4ab045089cf818e52, type: 3}
+--- !u!114 &651275891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7844640419698840976, guid: f07ef9e7a00882f4ab045089cf818e52, type: 3}
   m_PrefabInstance: {fileID: 6621789403552722898}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34376d1fdac6b1b4ba1de66c7d2115db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &663810045
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,11 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 1103232659}
     - target: {fileID: 2128892585674280406, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8384735628470910511, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8794591663250596865, guid: f594eb874b85962419eb486fecad5307, type: 3}
       propertyPath: m_RootOrder
@@ -1020,13 +1026,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 651275889}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 651275891}
+        m_TargetAssemblyTypeName: Mainmenu, Assembly-CSharp
+        m_MethodName: SaveGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
