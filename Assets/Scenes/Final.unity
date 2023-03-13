@@ -1082,10 +1082,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: God
       objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222023, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: spawnWormTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1204217215934222040, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1130,57 +1126,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[7].tag
-      value: fireball
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[8].tag
-      value: chest2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[3].size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[7].size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[8].size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[7].prefab
-      value: 
-      objectReference: {fileID: 1516772723858027209, guid: b4bebe0c93a5adf4baa5d50e29bf5898, type: 3}
-    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-      propertyPath: pools.Array.data[8].prefab
-      value: 
-      objectReference: {fileID: 951207049338560741, guid: 3f2c7855ca7a69c40afe8c6dd367435b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
---- !u!1 &1851196032 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1204217215934222022, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
-  m_PrefabInstance: {fileID: 1851196031}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1851196033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851196032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7297cc445d80b434e9d1e0ee589c8404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &838035870526579139
 PrefabInstance:
   m_ObjectHideFlags: 0

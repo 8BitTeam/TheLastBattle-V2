@@ -8,9 +8,8 @@ public class GatlingGun : MainGun
     public override void Shoot()
     {
         Vector3 force = GetShootDirection().normalized * FireForceAmplitude;
-        //var instanceBullet = Instantiate(bullet, barrel.transform.position, Quaternion.LookRotation(Vector3.forward, GetShootDirection()));
         Bullet instanceBullet = factory.CreateBullet(barrel.position);
-        //ObjectPooler.Instance.SpawnFromPool("basicBullet", barrel.transform.position, Quaternion.LookRotation(Vector3.forward, GetShootDirection()));
+        if(instanceBullet != null )
         instanceBullet.Shoot(
             force, "gatlingGunBullet", bulletDamage,
             gameObject,

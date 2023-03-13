@@ -30,7 +30,7 @@ public class ShotGun : MainGun
 
             //var instanceBullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", barrel.position, Quaternion.identity);
             Bullet instanceBullet = factory.CreateBullet(barrel.position);
-
+            if(instanceBullet != null)
             instanceBullet.Shoot(
                 force, "shotGunBullet", bulletDamage,
                 gameObject,
