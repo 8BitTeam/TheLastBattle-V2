@@ -53,9 +53,6 @@ public abstract class Creep : MonoBehaviour
 
     void Start()
     {
-        //currentState = idleState;
-        //currentState.EnterState(this);
-
         // Thực hiện các phương thức khởi tạo ở các lớp con kế thừa
         InitSubClass();
 
@@ -88,6 +85,8 @@ public abstract class Creep : MonoBehaviour
         //currentState.UpdateState(this);
 
         controlHealth.SetHeatlh(health);
+
+        // Code di chuyển
         if (main == null)
         {
             RandomMovingAroundBornPos();
@@ -105,8 +104,7 @@ public abstract class Creep : MonoBehaviour
             Vector2 facingDirection = main.transform.position - transform.position;
             ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
         }
-
-        if ( Vector2.Distance(transform.position, mainCamera.transform.position) >type.MaxDistanceWithCamera)
+        if (Vector2.Distance(transform.position, mainCamera.transform.position) > type.MaxDistanceWithCamera)
         {
             gameObject.SetActive(false);
         }
@@ -132,6 +130,7 @@ public abstract class Creep : MonoBehaviour
     {
         stepPerFrame = Time.fixedDeltaTime * speed;
         gameObject.transform.position = Vector2.MoveTowards(transform.position, main.transform.position, stepPerFrame);
+        
     }
 
     // Thực hiện việc di chuyển xung quanh 1 điểm random bất kì trong bán kính cho trước khi vừa sinh ra (DK: không chết và main == null)
