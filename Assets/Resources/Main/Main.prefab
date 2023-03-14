@@ -415,7 +415,6 @@ GameObject:
   - component: {fileID: 2243087444171404928}
   - component: {fileID: 2243087444171404935}
   - component: {fileID: 2243087444171404934}
-  - component: {fileID: 2243087444171404929}
   m_Layer: 9
   m_Name: Main
   m_TagString: main
@@ -705,21 +704,6 @@ MonoBehaviour:
   health: 100
   manaSpend: 30
   gameOverScreen: {fileID: 0}
---- !u!114 &2243087444171404929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7290666580463162312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79337320fb252b4493b9c65e116e93d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyscoreText: {fileID: 0}
-  ScoreNumber: 0
-  GameOverScreen: {fileID: 0}
 --- !u!1001 &2243087442722190588
 PrefabInstance:
   m_ObjectHideFlags: 0
