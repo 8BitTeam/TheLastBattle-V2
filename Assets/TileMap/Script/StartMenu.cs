@@ -8,12 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    [SerializeField]
-    GameObject main_prefabs;
 
-    GameObject main;
-    [SerializeField]
-    GameObject creep_prefabs;
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -26,19 +21,7 @@ public class StartMenu : MonoBehaviour
         SceneManager.LoadScene(3);
         Time.timeScale = 1;
 
-        string saveMain = File.ReadAllText(Application.dataPath + "/savemain.txt");
-        //List<String> mainModel = JsonConvert.DeserializeObject<List<String>>(saveMain);
-        if(saveMain != null)
-        {
-            String[] inforMain = saveMain.Split(' ');
-            main = Instantiate<GameObject>(main_prefabs, new Vector3(float.Parse(inforMain[0]), float.Parse(inforMain[1])), Quaternion.identity);
-            main.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]);
-            main.GetComponent<MainAttackScript>().manaSpend = int.Parse(inforMain[3]);
-            StateNameController.scorecoin = int.Parse(inforMain[4]);
-
-            GameObject kok = Instantiate(main_prefabs, new Vector3(float.Parse(inforMain[0])-0.01f, float.Parse(inforMain[1])), Quaternion.identity);
-
-        }
+        LoadGameController loadGame = LoadGameController.getInstance();
 
     }
     public void QuitGame()
