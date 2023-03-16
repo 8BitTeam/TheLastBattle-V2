@@ -37,7 +37,7 @@ public abstract class Creep : MonoBehaviour
     public GameObject healthBar;
 
     public Vector3? destinationForRandomMove = null;
-    public bool isTimerRun = false;
+    //public bool isTimerRun = false;
 
     // Biến tạm, dùng để sử dụng tốc độ cho hàm di chuyển,
     // bởi vì có những thời điểm tốc độ di chuyển về 0
@@ -47,6 +47,7 @@ public abstract class Creep : MonoBehaviour
     BaseState currentState;
     public BaseState idleState = new IdleState();
     public BaseState walkingState = new WalkingState();
+    public BaseState randomWalkingState = new RandomWalkingState();
     public BaseState attackState = new AttackState();
     public BaseState getHitState = new GetHitState();
     public BaseState deadState = new DeadState();
@@ -71,40 +72,42 @@ public abstract class Creep : MonoBehaviour
         timer = gameObject.AddComponent<Timer>();
         timer.Duration = type.StandDuration;
 
-        animator.SetTrigger("idle");
+        //animator.SetTrigger("idle");
         controlHealth.SetMaxHealth(type.MaxHealth);
 
         attackPoint = transform.Find("AttackPoint");
 
         // Đặt trạng thái là idle
         SwitchState(idleState);
+        //SwitchState(randomWalkingState);
     }
 
     private void FixedUpdate()
     {
         //currentState.UpdateState(this);
-
         controlHealth.SetHeatlh(health);
 
         // Code di chuyển
         if (main == null)
         {
-            RandomMovingAroundBornPos();
-            Vector2 facingDirection = (Vector3)destinationForRandomMove - transform.position;
-            ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
-            // Lật ngược thêm 1 lần nữa để thanh health luôn quay về 1 phía
-            ScreenHelper.Facing(facingDirection, isFacingRight, healthBar);
+            //RandomMovingAroundBornPos();
+            //Vector2 facingDirection = (Vector3)destinationForRandomMove - transform.position;
+            //ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
+            //// Lật ngược thêm 1 lần nữa để thanh health luôn quay về 1 phía
+            //ScreenHelper.Facing(facingDirection, isFacingRight, healthBar);
 
             main = Eye.GetComponent<EyeController>().SeeMain();
         }
-        if (main != null && canRun)
+        if (main != null && currentState != walkingState)
         {
-            RunToMain(type.Speed);
+            //RunToMain(type.Speed);
             SwitchState(walkingState);
-            Vector2 facingDirection = main.transform.position - transform.position;
-            ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
+            //Vector2 facingDirection = main.transform.position - transform.position;
+            //ScreenHelper.Facing(facingDirection, isFacingRight, gameObject);
         }
-        if (Vector2.Distance(transform.position, mainCamera.transform.position) > type.MaxDistanceWithCamera)
+        currentState.UpdateState(this);
+
+        if ( Vector2.Distance(transform.position, mainCamera.transform.position) >type.MaxDistanceWithCamera)
         {
             gameObject.SetActive(false);
         }
@@ -126,43 +129,43 @@ public abstract class Creep : MonoBehaviour
     }
 
     // Thực hiện việc chạy lại gần Main (DK: Không chết)
-    private void RunToMain(float speed)
-    {
-        stepPerFrame = Time.fixedDeltaTime * speed;
-        gameObject.transform.position = Vector2.MoveTowards(transform.position, main.transform.position, stepPerFrame);
-        
-    }
+    //private void RunToMain(float speed)
+    //{
+    //    stepPerFrame = Time.fixedDeltaTime * speed;
+    //    gameObject.transform.position = Vector2.MoveTowards(transform.position, main.transform.position, stepPerFrame);
+    //}
 
     // Thực hiện việc di chuyển xung quanh 1 điểm random bất kì trong bán kính cho trước khi vừa sinh ra (DK: không chết và main == null)
-    private void RandomMovingAroundBornPos()
-    {
-        if (transform.position == destinationForRandomMove && !isTimerRun)
-        {
-            timer.Run();
-            isTimerRun = true;
-            SwitchState(idleState);
-        }
-        if (destinationForRandomMove == null || (timer.Finished && isTimerRun))
-        {
-            SwitchState(walkingState);
-            destinationForRandomMove = new Vector2(
-                Random.Range(bornPosition.x - type.RadiusAreaMoving, bornPosition.x + type.RadiusAreaMoving),
-                Random.Range(bornPosition.y - type.RadiusAreaMoving, bornPosition.y + type.RadiusAreaMoving)
-            );
-            isTimerRun = false;
-        }
-        if (speedAction > 0)
-        {
-            stepPerFrame = Time.fixedDeltaTime * speedAction;
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, (Vector2)destinationForRandomMove, stepPerFrame);
-        }
-    }
+    //private void RandomMovingAroundBornPos()
+    //{
+    //    if (transform.position == destinationForRandomMove && !isTimerRun)
+    //    {
+    //        timer.Run();
+    //        isTimerRun = true;
+    //        SwitchState(idleState);
+    //    }
+    //    if (destinationForRandomMove == null || (timer.Finished && isTimerRun))
+    //    {
+    //        SwitchState(randomWalking);
+    //        destinationForRandomMove = new Vector2(
+    //            Random.Range(bornPosition.x - type.RadiusAreaMoving, bornPosition.x + type.RadiusAreaMoving),
+    //            Random.Range(bornPosition.y - type.RadiusAreaMoving, bornPosition.y + type.RadiusAreaMoving)
+    //        );
+    //        isTimerRun = false;
+    //    }
+    //    if (speedAction > 0)
+    //    {
+    //        stepPerFrame = Time.fixedDeltaTime * speedAction;
+    //        gameObject.transform.position = Vector2.MoveTowards(transform.position, (Vector2)destinationForRandomMove, stepPerFrame);
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject colliGameObj = collision.gameObject;
         CollisionWithBullet(colliGameObj);
         EnterCollisionWithExplosion(colliGameObj);
+        EnterCollisionWithMain(colliGameObj);
     }
 
     public bool isAlive()
@@ -231,12 +234,7 @@ public abstract class Creep : MonoBehaviour
             };
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        var colliGameObj = collision.gameObject;
-        EnterCollisionWithMain(colliGameObj);
-    }
-
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         ExitCollisionWithMain(collision.gameObject);
