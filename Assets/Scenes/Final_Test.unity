@@ -1473,6 +1473,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
+      propertyPath: pools.Array.data[3].tag
+      value: wormCreep
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204217215934222041, guid: 6dcb2e4df3ce87f4d99390522a897a0a, type: 3}
       propertyPath: pools.Array.data[7].tag
       value: fireball
       objectReference: {fileID: 0}

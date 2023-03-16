@@ -12,6 +12,7 @@ public class DeadState : BaseState
             creep.audioDeath.Play();
         }
     }
+
     public override void ExitState(Creep creep)
     {
         creep.gameObject.tag = "deadCreep";
@@ -19,8 +20,7 @@ public class DeadState : BaseState
         // Trạng thái của biến canRun == false để không di chuyển nữa, việc kiểm tra biến này nằm trong hàm Update
         creep.canRun = false;
     }
-    //public override void UpdateState(Creep creep)
-    //{
-    //    throw new System.NotImplementedException();
-    //}
+    public override void UpdateState(Creep creep)
+    {
+    }
 }
