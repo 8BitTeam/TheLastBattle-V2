@@ -14,7 +14,7 @@ public class AttackState : BaseState
 
     public override void ExitState(Creep creep)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public override void UpdateState(Creep creep)

@@ -96,37 +96,6 @@ public class RandomSpawner : MonoBehaviour
         if (creep == null) return;
     }
 
-    //private void SpawnWor()
-    //{
-    //    Vector2 location_creep = SpawnPosition();
-    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-    //    AbstractFactory factory = new WormFactory();
-    //    Creep creep = factory.CreateCreep(location_creep);
-    //    if (creep == null) return;
-    //}
-
-    //private void SpawnGiantGob()
-    //{
-    //    Vector2 location_creep = SpawnPosition();
-    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-    //    GameObject worm = ObjectPooler.Instance.SpawnFromPool("giantGoblinCreep", location_creep, Quaternion.identity);
-    //    if (worm == null) return;
-    //}
-
-    //private void SpawnChest()
-    //{
-    //    Vector2 location_chest = SpawnPosition();
-    //    //Vector3 worldLocation = Camera.main.ScreenToWorldPoint(location);
-    //    var random = Random.Range(0, 1);
-    //    var tag = "chest1";
-    //    if(random > 0.5)
-    //    {
-    //        tag = "chest1";
-    //    }
-    //    GameObject chest = ObjectPooler.Instance.SpawnFromPool(tag, location_chest, Quaternion.identity);
-    //    if (chest == null) return;
-    //}
-
     private Vector2 SpawnPosition()
     {
         Vector2 location_creep;
