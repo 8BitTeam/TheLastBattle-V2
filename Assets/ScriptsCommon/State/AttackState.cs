@@ -11,12 +11,13 @@ public class AttackState : BaseState
             creep.animator.SetTrigger("attack");
         }
     }
+
     public override void ExitState(Creep creep)
     {
         throw new System.NotImplementedException();
     }
-    //public override void UpdateState(Creep creep)
-    //{
-    //    throw new System.NotImplementedException();
-    //}
+
+    public override void UpdateState(Creep creep)
+    {
+    }
 }
