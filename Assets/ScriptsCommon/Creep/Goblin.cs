@@ -8,13 +8,13 @@ public class Goblin : Creep
     protected override void InitSubClass()
     {
         // Lấy type từ factory
-        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1, 50);
+        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1, 50, 0.5f);
         health = type.MaxHealth;
     }
 
     public override void AttachMain()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, mainLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, type.AttackRange, mainLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {

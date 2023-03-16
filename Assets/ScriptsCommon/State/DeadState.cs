@@ -17,8 +17,6 @@ public class DeadState : BaseState
     {
         creep.gameObject.tag = "deadCreep";
         creep.SetCollider(false);
-        // Trạng thái của biến canRun == false để không di chuyển nữa, việc kiểm tra biến này nằm trong hàm Update
-        creep.canRun = false;
     }
     public override void UpdateState(Creep creep)
     {
