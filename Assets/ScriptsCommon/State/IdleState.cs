@@ -5,7 +5,6 @@ using UnityEngine;
 public class IdleState : BaseState
 {
     //public Vector3? destinationForRandomMove = null;
-    public bool isTimerRun = true;
     public override void EnterState(Creep creep)
     {
         creep.speedAction = 0;

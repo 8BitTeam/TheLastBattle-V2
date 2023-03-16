@@ -10,9 +10,6 @@ public class MainAttackScript : MonoBehaviour
     public float health = 100;
 
     public float manaSpend = 30f;
-
-    private TextMeshProUGUI textHP, textMana;
-
     HealthBar controlHealth;
     HealthBar controlDisplayMana;
 
@@ -22,9 +19,6 @@ public class MainAttackScript : MonoBehaviour
     
     public GameOverScreen gameOverScreen;
 
-    
-    
-    
     //HealthBar controlHealth;
     // Start is called before the first frame update
     void Start()
@@ -49,6 +43,7 @@ public class MainAttackScript : MonoBehaviour
     private void OnMainHealthChange()
     {
         controlHealth.SetHeatlh(health);
+        Handheld.Vibrate();
     }
 
     // Update is called once per frame

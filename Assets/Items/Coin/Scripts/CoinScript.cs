@@ -18,16 +18,14 @@ public class CoinScript : MonoBehaviour
     void Start()
     {
         eye = transform.Find("Eye").GetComponent<EyeController>();
+        eye.detectMain += SeeMain;
         mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (main == null)
-        {
-            main = eye.SeeMain();
-        }
+    
     }
 
     private void FixedUpdate()
@@ -53,6 +51,7 @@ public class CoinScript : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "main")
@@ -60,5 +59,10 @@ public class CoinScript : MonoBehaviour
             this.PostEvent(EventID.OnCoinCollect);
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    private void SeeMain(GameObject main)
+    {
+        this.main = main;
     }
 }

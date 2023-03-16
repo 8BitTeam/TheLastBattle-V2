@@ -34,7 +34,7 @@ public class MainSkillsScript : MonoBehaviour
         btnCBullet.onClick.AddListener(CircleBullet);
     }
 
-    void Update()
+    void Update() 
     {
 
     }
