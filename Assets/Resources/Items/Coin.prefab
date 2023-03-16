@@ -225,7 +225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   maxDistanceWithCamera: 30
-  coinSound: {fileID: 0}
 --- !u!82 &8010578064598162197
 AudioSource:
   m_ObjectHideFlags: 0
@@ -237,7 +236,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6b529b2e03382145b8b94b986ff88db, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

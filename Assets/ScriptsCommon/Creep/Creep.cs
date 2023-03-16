@@ -158,14 +158,8 @@ public abstract class Creep : MonoBehaviour
         }
     }
 
-    private GameObject shooterFromBullet;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("bullet"))
-        {
-
-        }
         GameObject colliGameObj = collision.gameObject;
         CollisionWithBullet(colliGameObj);
         EnterCollisionWithExplosion(colliGameObj);
@@ -191,6 +185,7 @@ public abstract class Creep : MonoBehaviour
         stepPerFrameStoring = stepPerFrame;
         canRunStoring = canRun;
         tagStoring = gameObject.tag;
+        health = type.MaxHealth;
     }
 
     private void OnDisable()
@@ -225,7 +220,7 @@ public abstract class Creep : MonoBehaviour
     {
         if (bulletGameObject.CompareTag("bullet"))
         {
-            shooterFromBullet = bulletGameObject.GetComponent<Bullet>().GetShooter();
+            //shooterFromBullet = bulletGameObject.GetComponent<Bullet>().GetShooter();
             if (health > 0)
             {
                 health -= bulletGameObject.GetComponent<Bullet>().type.Damage;
