@@ -1,0 +1,7 @@
+FlyWeitgh: D
+AbstractFact: D
+ObjectPool: D
+SingleTon: D
+State: D
+
+Observer pattern cho Control Health Creep

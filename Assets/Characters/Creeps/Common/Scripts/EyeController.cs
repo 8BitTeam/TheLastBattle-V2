@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EyeController : MonoBehaviour
 {
-    private GameObject main;
+    public delegate void DetectMain(GameObject main);
+    public DetectMain detectMain;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("main"))
         {
-            main = collision.gameObject;
+            detectMain(collision.gameObject);
         }
     }
 
@@ -18,16 +19,7 @@ public class EyeController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("main"))
         {
-            main = null;
+            
         }
-    }
-
-    public GameObject SeeMain()
-    {
-        if (main == null)
-        {
-            return null;
-        }
-        return main;
     }
 }
