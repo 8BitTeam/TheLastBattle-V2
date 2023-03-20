@@ -79,8 +79,18 @@ public class Mainmenu : MonoBehaviour
     }
     void AddCreepToList()
     {
-        GameObject[] listcreep = GameObject.FindGameObjectsWithTag("creep");
-        if (listcreep.Length != 0)
+        GameObject[] listgoblin = GameObject.FindGameObjectsWithTag("goblin");
+        GameObject[] listworm = GameObject.FindGameObjectsWithTag("worm");
+        List<GameObject> listcreep = new List<GameObject>();
+        foreach(GameObject go in listgoblin)
+        {
+            listcreep.Add(go);
+        }
+        foreach (GameObject go in listworm)
+        {
+            listcreep.Add(go);
+        }
+        if (listcreep.Count != 0)
         {
             foreach (GameObject cre in listcreep)
             {

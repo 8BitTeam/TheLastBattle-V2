@@ -11,17 +11,15 @@ public class StartMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(3,LoadSceneMode.Single);
         Time.timeScale = 1;
-
-
     }
     public void ContitnueGame()
     {
         SceneManager.LoadScene(3);
         Time.timeScale = 1;
 
-        LoadGameController loadGame = LoadGameController.getInstance();
+       LoadGameController.getInstance();
 
     }
     public void QuitGame()
