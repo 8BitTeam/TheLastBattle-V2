@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,10 +11,13 @@ public abstract class Gun : MonoBehaviour
 
     public AbstractFactory factory;
     
-    public float shootDistance = 5;
-    public float secondPerShoot = 0.01f;
-    public float FireForceAmplitude = 30f;
-    public int bulletDamage = 1;
+    public GunType type;
+
+    //// Các thuộc tính cố định cần thay bởi type
+    //public float shootDistance = 5;
+    //public float secondPerShoot = 0.01f;
+    //public float FireForceAmplitude = 30f;
+    //public int bulletDamage = 1;
 
     protected Timer timer;
     protected Vector2 lookDirection;

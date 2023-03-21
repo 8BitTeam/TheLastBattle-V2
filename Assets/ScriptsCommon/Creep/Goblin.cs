@@ -8,7 +8,10 @@ public class Goblin : Creep
     protected override void InitSubClass()
     {
         // Lấy type từ factory
-        type = TypeFactory.Instance.GetCreepType("goblin", 5, 25, 2, 3, 1, 50, 0.5f);
+        GameConfigModel.Creep.Goblin configGoblin = ScreenHelper.LoadConfig().creep.goblin;
+        type = TypeFactory.Instance.GetCreepType("goblin", configGoblin.damage,
+            configGoblin.maxDistanceWithCamera, configGoblin.speed, configGoblin.radiusAreaMoving,
+            configGoblin.standDuration, configGoblin.maxHealth, configGoblin.attackRange);
         health = type.MaxHealth;
     }
 
