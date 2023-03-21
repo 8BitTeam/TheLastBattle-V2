@@ -8,18 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-
     public void StartGame()
     {
-        SceneManager.LoadScene(3,LoadSceneMode.Single);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1;
+        PlayerPrefs.SetInt("enableLoad", 0);
     }
     public void ContitnueGame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1;
-
-       LoadGameController.getInstance();
+        PlayerPrefs.SetInt("enableLoad", 1);
+       // LoadGameController.getInstance();
 
     }
     public void QuitGame()
