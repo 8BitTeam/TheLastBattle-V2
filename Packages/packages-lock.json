@@ -204,10 +204,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "file:D:/Unity/DemoScriptBigProject/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2",
+      "version": "3.0.2",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
     },
     "com.unity.recorder": {
       "version": "3.0.3",
