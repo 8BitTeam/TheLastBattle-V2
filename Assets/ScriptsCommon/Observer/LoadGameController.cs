@@ -50,7 +50,7 @@ public class LoadGameController : MonoBehaviour
         {
             Load();
         }
-        DontDestroyOnLoad(this);
+        
     }
     void Load()
     {
