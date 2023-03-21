@@ -136,8 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80d2e91a0068ff1449fbc59c27e2de0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
   shooter: {fileID: 0}
   bulletBody: {fileID: 0}
-  damage: 10
-  distanceCanFly: 20
