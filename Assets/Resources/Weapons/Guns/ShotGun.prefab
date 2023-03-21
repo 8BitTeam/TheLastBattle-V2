@@ -10,15 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8384735627588009247}
   - component: {fileID: 8384735627588009244}
-  - component: {fileID: 8384735627588009242}
-  - component: {fileID: 3778488997855379537}
+  - component: {fileID: 2243087442837208664}
   m_Layer: 0
   m_Name: ShotGun
   m_TagString: shotgun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8384735627588009247
 Transform:
   m_ObjectHideFlags: 0
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 537016529
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1636396634, guid: 1ee0899da528ad24ab8af611ca50040a, type: 3}
   m_Color: {r: 0.972549, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8384735627588009242
+--- !u!114 &2243087442837208664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,27 +95,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8384735627588009246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bff0293c45d0ad74989a2f0019082650, type: 3}
+  m_Script: {fileID: 11500000, guid: b01a7db1c970d8149b3e22cfce97404b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shootDistance: 5
-  secondPerShoot: 0.3
-  isCanShoot: 0
---- !u!114 &3778488997855379537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8384735627588009246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2955bd73c98aea8499bbd8920bb52d4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletAmount: 5
-  fireForceAmplitude: 20
+  secondPerShoot: 0.01
+  FireForceAmplitude: 30
   bulletDamage: 1
+  nearbyCreep: {fileID: 0}
+  barrel: {fileID: 0}
+  distanceToNearestCreep: 0
+  bulletAmount: 5
+  bulletAngle: 90
 --- !u!1 &8384735628815348899
 GameObject:
   m_ObjectHideFlags: 0

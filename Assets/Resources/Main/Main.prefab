@@ -711,30 +711,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7290666580463162316}
     m_Modifications:
-    - target: {fileID: 3778488997855379537, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: bulletAmount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778488997855379537, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: bulletDamage
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778488997855379537, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: fireForceAmplitude
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384735627588009242, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: shootDistance
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384735627588009242, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: secondPerShoot
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384735627588009244, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8384735627588009246, guid: 567f863775079f441be25e7968d0cad9, type: 3}
       propertyPath: m_Name
       value: ShotGun
@@ -783,36 +759,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8384735627588009242, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-    - {fileID: 3778488997855379537, guid: 567f863775079f441be25e7968d0cad9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 567f863775079f441be25e7968d0cad9, type: 3}
---- !u!1 &7745519025004317154 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8384735627588009246, guid: 567f863775079f441be25e7968d0cad9, type: 3}
-  m_PrefabInstance: {fileID: 2243087442722190588}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2243087442837208664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7745519025004317154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01a7db1c970d8149b3e22cfce97404b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootDistance: 5
-  secondPerShoot: 0.01
-  FireForceAmplitude: 30
-  bulletDamage: 1
-  nearbyCreep: {fileID: 0}
-  barrel: {fileID: 0}
-  distanceToNearestCreep: 0
-  bulletAmount: 5
-  bulletAngle: 90
 --- !u!4 &7745519025004317155 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8384735627588009247, guid: 567f863775079f441be25e7968d0cad9, type: 3}
@@ -869,59 +817,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2128892583812071293, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2128892583812071294, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
       propertyPath: m_Name
       value: MachineGun
       objectReference: {fileID: 0}
-    - target: {fileID: 2128892583812071295, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-      propertyPath: shootDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128892583812071295, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-      propertyPath: secondPerShoot
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642787212522023794, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-      propertyPath: bulletDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642787212522023794, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-      propertyPath: FireForceAmplitude
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4642787212522023794, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-    - {fileID: 2128892583812071295, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-    - {fileID: 2192666890688615938, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
---- !u!1 &192058996510456347 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2128892583812071294, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}
-  m_PrefabInstance: {fileID: 2243087443701564773}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2243087443569587203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192058996510456347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736dbd1e6d7b623488ae0c6282824bbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootDistance: 5
-  secondPerShoot: 0.01
-  FireForceAmplitude: 30
-  bulletDamage: 1
-  nearbyCreep: {fileID: 0}
-  barrel: {fileID: 0}
-  distanceToNearestCreep: 0
 --- !u!4 &192058996510456351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2128892583812071290, guid: 7bcbe8926c11d4a478e88165e613f6aa, type: 3}

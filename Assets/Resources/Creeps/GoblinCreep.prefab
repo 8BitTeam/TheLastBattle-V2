@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: -3522857924087966713}
   m_Layer: 3
   m_Name: GoblinCreep
-  m_TagString: creep
+  m_TagString: goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

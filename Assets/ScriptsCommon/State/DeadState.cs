@@ -8,6 +8,7 @@ public class DeadState : BaseState
     {
         if (!ScreenHelper.CompareCurrentAnimationName(creep.animator, "Death"))
         {
+            creep.SetCollider(false);
             creep.animator.SetTrigger("dead");
             creep.audioDeath.Play();
         }
@@ -15,8 +16,6 @@ public class DeadState : BaseState
 
     public override void ExitState(Creep creep)
     {
-        creep.gameObject.tag = "deadCreep";
-        creep.SetCollider(false);
     }
     public override void UpdateState(Creep creep)
     {
