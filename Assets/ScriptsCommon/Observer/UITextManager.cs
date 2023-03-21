@@ -17,7 +17,7 @@ public class UITextManager : MonoBehaviour
         coinOnText.gameObject.SetActive(false);
         this.RegisterListener(EventID.OnCoinCollect, (param) => OnCoinCollect());
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 2f;
+        timer.Duration = 5f;
         timer.Run();
     }
 
@@ -25,7 +25,7 @@ public class UITextManager : MonoBehaviour
     {
         coinOnText.gameObject.SetActive(true);
         numberOfCoins++;
-        coinOnText.text = "You have " + numberOfCoins.ToString()+"coins";
+        coinOnText.text = "You have " + numberOfCoins.ToString()+" coins";
         StateNameController.scorecoin = numberOfCoins;
     }
     private void Update()

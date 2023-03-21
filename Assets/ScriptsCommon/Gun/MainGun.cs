@@ -35,20 +35,21 @@ public abstract class MainGun : Gun
     public (GameObject, float) FindNearestCreep()
     {
         float minDistance = float.PositiveInfinity;
-
-        GameObject[] nearbyCreepList = GameObject.FindGameObjectsWithTag("creep");
+        
+        Creep[] nearbyCreepList = FindObjectsOfType<Creep>(false)
+            .Where(c => !c.currentState.GetType().Equals(typeof(DeadState))).ToArray();
         if (nearbyCreepList.Count() == 0)
         {
             return (null, minDistance);
         }
-        GameObject nearestCreep = nearbyCreepList[0];
-        foreach (GameObject creep in nearbyCreepList)
+        GameObject nearestCreep = nearbyCreepList[0].gameObject;
+        foreach (Creep creep in nearbyCreepList)
         {
             float distance = (transform.position - creep.transform.position).sqrMagnitude;
             {
                 if (distance < minDistance)
                 {
-                    nearestCreep = creep;
+                    nearestCreep = creep.gameObject;
                     minDistance = distance;
                 }
             }

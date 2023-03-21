@@ -28,6 +28,8 @@ TagManager:
   - aim
   - fireball
   - carry
+  - goblin
+  - worm
   layers:
   - Default
   - TransparentFX

@@ -32,7 +32,8 @@ public class ShootFireball : Gun
 
     public override void CheckCanShoot()
     {
-        if (timer.Finished && !transform.parent.gameObject.CompareTag("deadCreep"))
+        if (timer.Finished && 
+            !transform.parent.gameObject.GetComponent<Creep>().currentState.GetType().Equals(typeof(DeadState)))
         {
             Shoot();
             timer.Run();
