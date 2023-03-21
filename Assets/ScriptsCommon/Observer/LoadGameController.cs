@@ -34,9 +34,9 @@ public class LoadGameController : MonoBehaviour
          saveMain = File.ReadAllText(Application.dataPath + "/savemain.txt");
          saveCreep = File.ReadAllText(Application.dataPath + "/savelistcreep.txt");
 
-        int enable = PlayerPrefs.GetInt("enableLoad") ==null?0 : PlayerPrefs.GetInt("enableLoad");
+        int enable = PlayerPrefs.GetInt("enableLoad")==1 ? 1 : PlayerPrefs.GetInt("enableLoad");
 
-        if (enable == 0)
+        if (enable == 1)
         {
             NewGame();
         }
