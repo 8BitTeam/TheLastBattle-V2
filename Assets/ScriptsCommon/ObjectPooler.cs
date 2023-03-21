@@ -1,6 +1,8 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,6 +23,21 @@ public class ObjectPooler : MonoBehaviour
     public void Awake()
     {
         Instance = this;
+
+        poolDictionnary = new Dictionary<string, Queue<GameObject>>();
+
+        foreach (Pool pool in pools)
+        {
+            Queue<GameObject> objecPool = new Queue<GameObject>();
+
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = Instantiate(pool.prefab);
+                obj.SetActive(false);
+                objecPool.Enqueue(obj);
+            }
+            poolDictionnary.Add(pool.tag, objecPool);
+        }
     }
 
     #endregion
@@ -31,20 +48,20 @@ public class ObjectPooler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        poolDictionnary = new Dictionary<string, Queue<GameObject>>();
+        //poolDictionnary = new Dictionary<string, Queue<GameObject>>();
 
-        foreach(Pool pool in pools)
-        {
-            Queue<GameObject> objecPool = new Queue<GameObject>();
+        //foreach(Pool pool in pools)
+        //{
+        //    Queue<GameObject> objecPool = new Queue<GameObject>();
 
-            for(int i = 0; i< pool.size; i++)
-            {
-                GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
-                objecPool.Enqueue(obj);
-            }
-            poolDictionnary.Add(pool.tag, objecPool);
-        }
+        //    for(int i = 0; i< pool.size; i++)
+        //    {
+        //        GameObject obj = Instantiate(pool.prefab);
+        //        obj.SetActive(false);
+        //        objecPool.Enqueue(obj);
+        //    }
+        //    poolDictionnary.Add(pool.tag, objecPool);
+        //}
     }
 
     public GameObject SpawnFromPool (string tag, Vector3 position, Quaternion rotation)

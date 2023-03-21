@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class MainGun : Gun
 {
+    public abstract void InitSubClass();
     public GameObject nearbyCreep;
     public Transform barrel;
 
@@ -12,9 +13,11 @@ public abstract class MainGun : Gun
 
     void Start()
     {
+        
+        InitSubClass();
         // Start timer;
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = secondPerShoot;
+        timer.Duration = type.SecondPerShoot;
         timer.Run();
 
         barrel = ScreenHelper.FindChildWithTag(gameObject, "gunBarrel").transform;
@@ -65,7 +68,7 @@ public abstract class MainGun : Gun
 
     public override void CheckCanShoot()
     {
-        if (timer.Finished && distanceToNearestCreep <= shootDistance * shootDistance)
+        if (timer.Finished && distanceToNearestCreep <= type.ShootDistance * type.ShootDistance)
         {
             Shoot();
             timer.Run();
