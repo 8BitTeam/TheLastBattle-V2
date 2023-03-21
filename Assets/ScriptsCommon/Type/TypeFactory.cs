@@ -6,6 +6,7 @@ public class TypeFactory : MonoBehaviour
 {
     private Dictionary<string, CreepType> creepTypes;
     private Dictionary<string, BulletType> bulletTypes;
+    private Dictionary<string, GunType> gunTypes;
 
     #region Singleton
 
@@ -22,6 +23,7 @@ public class TypeFactory : MonoBehaviour
     {
         creepTypes = new Dictionary<string, CreepType>();
         bulletTypes = new Dictionary<string, BulletType>();
+        gunTypes = new Dictionary<string, GunType>();
     }
 
     public CreepType GetCreepType(string typeKey, int damage, float maxDistanceWithCam,
@@ -41,12 +43,24 @@ public class TypeFactory : MonoBehaviour
     public BulletType GetBulletType(string typeKey, float damage, float distanceCanFly)
     {
         if (bulletTypes.ContainsKey(typeKey)) return bulletTypes[typeKey];
-        else {
-            BulletType type =  new BulletType(damage, distanceCanFly);
+        else
+        {
+            BulletType type = new BulletType(damage, distanceCanFly);
             bulletTypes.Add(typeKey, type);
             return type;
         };
     }
 
-
+    public GunType GetGunType(string typeKey, float shootDistance, float secondPerShoot,
+        float fireForceAmplitude, int bulletDamage)
+    {
+        if (gunTypes.ContainsKey(typeKey)) return gunTypes[typeKey];
+        else
+        {
+            GunType type = new GunType(shootDistance, secondPerShoot,
+         fireForceAmplitude, bulletDamage);
+            gunTypes.Add(typeKey, type);
+            return type;
+        };
+    }
 }

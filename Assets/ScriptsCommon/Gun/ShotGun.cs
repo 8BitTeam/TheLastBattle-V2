@@ -10,6 +10,14 @@ public class ShotGun : MainGun
     public float bulletAngle = 90f;
     private float startAngle, endAngle;
 
+    public override void InitSubClass()
+    {
+        GameConfigModel.MainGun.ShotGun shotGun = ScreenHelper.LoadConfig().mainGun.shotGun;
+
+        type = TypeFactory.Instance.GetGunType("shotGun", shotGun.shootDistance,
+            shotGun.secondPerShoot, shotGun.fireForceAmplitude, shotGun.bulletDamage);
+    }
+
     public override void Shoot()
     {
         Vector2 shootDirection = GetShootDirection();
@@ -26,13 +34,13 @@ public class ShotGun : MainGun
             float bulDirY = shootDirection.y + Mathf.Cos((angle * Mathf.PI) / 180f);
 
             Vector2 bulMoveVector = new Vector2(bulDirX, bulDirY);
-            Vector2 force = bulMoveVector.normalized * FireForceAmplitude;
+            Vector2 force = bulMoveVector.normalized * type.FireForceAmplitude;
 
             //var instanceBullet = ObjectPooler.Instance.SpawnFromPool("basicBullet", barrel.position, Quaternion.identity);
             Bullet instanceBullet = factory.CreateBullet(barrel.position);
             if(instanceBullet != null)
             instanceBullet.Shoot(
-                force, "shotGunBullet", bulletDamage,
+                force, "shotGunBullet", type.BulletDamage,
                 gameObject,
                 transform.parent.gameObject
             );
