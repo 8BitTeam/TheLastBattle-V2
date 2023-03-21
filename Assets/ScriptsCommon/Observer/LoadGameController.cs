@@ -14,8 +14,14 @@ public class LoadGameController : MonoBehaviour
     GameObject healthBar;
     HealthBar controlHealth, controlHealthCreep;
     HealthBar controlDisplayMana;
-
     private static LoadGameController instance;
+
+    public void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public static LoadGameController getInstance()
     {
         if (instance == null)
@@ -84,7 +90,7 @@ public class LoadGameController : MonoBehaviour
                 //creep.health = cm.health;
 
                 //creep = Instantiate<GameObject>(creep_prefab, new Vector3(float.Parse(inforMain[0]), float.Parse(inforMain[1])), Quaternion.identity);
-                //creep.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]);
+                //creep.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]); 
 
             }
             
