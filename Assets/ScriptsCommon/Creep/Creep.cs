@@ -8,8 +8,7 @@ public abstract class Creep : MonoBehaviour
     public abstract void AttachMain();
     protected abstract void InitSubClass();
 
-    // Chỉ số giữ nguyên 
-
+    // Chỉ số giữ nguyên
 
     // Thay thế chỉ số giữ nguyên bằng FlyWeight.
     public CreepType type;
@@ -241,8 +240,6 @@ public abstract class Creep : MonoBehaviour
             animator.SetTrigger("getDamage");
         }
     }
-
-
 
     /** Sử dụng để tạo hiệu ứng hiển thị vột vòng tròn damage tác động lên main */
     private void OnDrawGizmosSelected()
