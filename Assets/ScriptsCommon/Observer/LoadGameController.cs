@@ -83,9 +83,9 @@ public class LoadGameController : MonoBehaviour
                 Vector2 location_creep = new Vector2(cm.X, cm.Y);
                 Creep creep = factory.CreateCreep(location_creep);
                 //Debug.Log(creep.gameObject.transform.position);
-                //healthBar = creep.gameObject.transform.Find("ControlHealthCreep").gameObject;
-                //controlHealthCreep = healthBar.GetComponent<HealthBar>();
-                //controlHealthCreep.SetHeatlh(cm.health);
+                healthBar = creep.gameObject.transform.Find("ControlHealthCreep").gameObject;
+                controlHealthCreep = healthBar.GetComponent<HealthBar>();
+                controlHealthCreep.SetHeatlh(cm.Health);
 
                 //creep.health = cm.health;
 
