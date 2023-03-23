@@ -6,9 +6,9 @@ using UnityEngine;
 [Serializable]
 public class CreepModel
 {
-    public string name;
-    public float x, y;
-    public float health;
+    private string name;
+    private float x, y;
+    private float health;
 
     public string Name { get { return name; } set { name = value; } }
     public float X { get { return x; } set { x = value; } }

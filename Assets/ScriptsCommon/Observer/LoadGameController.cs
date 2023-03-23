@@ -14,8 +14,14 @@ public class LoadGameController : MonoBehaviour
     GameObject healthBar;
     HealthBar controlHealth, controlHealthCreep;
     HealthBar controlDisplayMana;
-
     private static LoadGameController instance;
+
+    public void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public static LoadGameController getInstance()
     {
         if (instance == null)
@@ -62,11 +68,11 @@ public class LoadGameController : MonoBehaviour
             foreach (CreepModel cm in listcreepmodel)
             {
 
-                if (cm.name.Equals("goblin"))
+                if (cm.Name.Equals("goblin"))
                 {
                     factory = new GoblinFactory();
                 }
-                else if (cm.name.Equals("worm"))
+                else if (cm.Name.Equals("worm"))
                 {
                     factory = new WormFactory();
                 }
@@ -74,18 +80,20 @@ public class LoadGameController : MonoBehaviour
                 {
                     Debug.Log("None Giant");
                 }
-                Vector2 location_creep = new Vector2(cm.x, cm.y);
+                Vector2 location_creep = new Vector2(cm.X, cm.Y);
                 Creep creep = factory.CreateCreep(location_creep);
-                //healthBar = creep.gameObject.transform.Find("ControlHealthCreep").gameObject;
-                //controlHealthCreep = healthBar.GetComponent<HealthBar>();
-                //controlHealthCreep.SetHeatlh(cm.health);
+                //Debug.Log(creep.gameObject.transform.position);
+                healthBar = creep.gameObject.transform.Find("ControlHealthCreep").gameObject;
+                controlHealthCreep = healthBar.GetComponent<HealthBar>();
+                controlHealthCreep.SetHeatlh(cm.Health);
 
                 //creep.health = cm.health;
 
                 //creep = Instantiate<GameObject>(creep_prefab, new Vector3(float.Parse(inforMain[0]), float.Parse(inforMain[1])), Quaternion.identity);
-                //creep.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]);
+                //creep.GetComponent<MainAttackScript>().health = int.Parse(inforMain[2]); 
 
             }
+            
         }
         else
         {

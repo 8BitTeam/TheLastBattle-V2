@@ -12,7 +12,7 @@ public class GoblinFactory : AbstractFactory
     public override Creep CreateCreep(Vector3 position)
     {
         GameObject creep = ObjectPooler.Instance.SpawnFromPool("goblinCreep", position, Quaternion.identity);
-        if (creep != null)
+        if (creep == null)
         {
             return null;
         }
