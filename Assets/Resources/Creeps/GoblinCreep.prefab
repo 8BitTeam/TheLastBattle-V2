@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: -3522857924087966713}
   m_Layer: 3
   m_Name: GoblinCreep
-  m_TagString: creep
+  m_TagString: goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,14 +438,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  damage: 5
-  maxDistanceWithCamera: 25
   main: {fileID: 0}
   stepPerFrame: 0
-  canRun: 1
   animator: {fileID: 0}
-  Speed: 0
   isFacingRight: 1
+  attackPoint: {fileID: 0}
+  mainLayers:
+    serializedVersion: 2
+    m_Bits: 512
   Eye: {fileID: 0}
   bornPosition: {x: 0, y: 0, z: 0}
   timer: {fileID: 0}
@@ -453,15 +453,7 @@ MonoBehaviour:
   controlHealth: {fileID: 0}
   audioDeath: {fileID: 0}
   healthBar: {fileID: 0}
-  radiusAreaMoving: 3
-  standDuration: 1
-  isTimerRun: 0
   speedAction: 0
-  attackPoint: {fileID: 0}
-  attackRange: 0.5
-  mainLayers:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!1001 &4142513264880332118
 PrefabInstance:
   m_ObjectHideFlags: 0

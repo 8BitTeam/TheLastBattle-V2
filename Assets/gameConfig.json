@@ -1,0 +1,51 @@
+{
+    "mainGun": {
+        "gatlingGun": {
+            "shootDistance": 5.0,
+            "secondPerShoot": 0.1,
+            "fireForceAmplitude": 30.0,
+            "bulletDamage": 1
+        },
+        "shotGun": {
+            "shootDistance": 5.0,
+            "secondPerShoot": 0.4,
+            "fireForceAmplitude": 30.0,
+            "bulletDamage": 1
+        }
+    },
+    "shootFireballGun": {
+        "shootDistance": 5.0,
+        "secondPerShoot": 0.4,
+        "fireForceAmplitude": 5.0,
+        "bulletDamage": 1
+    },
+    "creep": {
+        "goblin": {
+            "damage": 5,
+            "maxDistanceWithCamera": 25.0,
+            "speed": 2.0,
+            "radiusAreaMoving": 3.0,
+            "standDuration": 1.0,
+            "maxHealth": 50.0,
+            "attackRange": 0.5
+        },
+        "worm": {
+            "damage": 5,
+            "maxDistanceWithCamera": 25.0,
+            "speed": 2.0,
+            "radiusAreaMoving": 3.0,
+            "standDuration": 1.0,
+            "maxHealth": 50.0,
+            "attackRange": 0.5
+        },
+        "giantGoblin": {
+            "damage": 0,
+            "maxDistanceWithCamera": 0.0,
+            "speed": 0.0,
+            "radiusAreaMoving": 0.0,
+            "standDuration": 0.0,
+            "maxHealth": 0.0,
+            "attackRange": 0.0
+        }
+    }
+}

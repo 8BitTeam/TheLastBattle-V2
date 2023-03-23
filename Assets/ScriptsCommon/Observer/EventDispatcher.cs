@@ -23,7 +23,6 @@ public class EventDispatcher : MonoBehaviour
 			}
 			return s_instance;
 		}
-		private set { }
 	}
 	//consturctor truyen vao
 	public void RegisterListener(EventID eventID, Action<object> callback)

@@ -1,9 +1,18 @@
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class ScreenHelper
 {
+    public static GameConfigModel LoadConfig()
+    {
+        string configString = File.ReadAllText(Application.dataPath + "/gameConfig.json");
+        GameConfigModel model = JsonConvert.DeserializeObject<GameConfigModel>(configString);
+        return model;
+    }
+
     public static void Facing(Vector2 facingDirection, bool isFacingRight, GameObject gameObject)
     {
         if (gameObject != null)

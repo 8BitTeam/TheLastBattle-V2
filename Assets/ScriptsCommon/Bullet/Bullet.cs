@@ -16,7 +16,7 @@ public abstract class Bullet : MonoBehaviour
     public Rigidbody2D bulletBody;
     private Transform main;
 
-    public void Awake()
+    public void Start()
     {
         main = GameObject.FindGameObjectWithTag("main").transform;
     }

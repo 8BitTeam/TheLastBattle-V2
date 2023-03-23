@@ -8,8 +8,7 @@ public abstract class Creep : MonoBehaviour
     public abstract void AttachMain();
     protected abstract void InitSubClass();
 
-    // Chỉ số giữ nguyên 
-
+    // Chỉ số giữ nguyên
 
     // Thay thế chỉ số giữ nguyên bằng FlyWeight.
     public CreepType type;
@@ -43,7 +42,7 @@ public abstract class Creep : MonoBehaviour
     public float speedAction;
 
     //State
-    BaseState currentState;
+    public BaseState currentState = new IdleState();
     public BaseState idleState = new IdleState();
     public BaseState runToMainState = new WalkingState();
     public BaseState randomWalkingState = new RandomWalkingState();
@@ -74,6 +73,7 @@ public abstract class Creep : MonoBehaviour
         timer.Duration = type.StandDuration;
 
         controlHealth.SetMaxHealth(type.MaxHealth);
+        controlHealth.SetHeatlh(type.MaxHealth);
         health = type.MaxHealth;
         attackPoint = transform.Find("AttackPoint");
 
@@ -86,7 +86,6 @@ public abstract class Creep : MonoBehaviour
         if (health <= 0 && currentState != deadState)
         {
             SwitchState(deadState);
-            Die();
         }
 
         currentState.UpdateState(this);
@@ -103,17 +102,8 @@ public abstract class Creep : MonoBehaviour
         baseState.EnterState(this);
     }
 
-    // Thực hiện hành động khi chết
-    public void Die()
-    {
-        currentState.ExitState(this);
-    }
-
-    private string tagStoring = "";
-
     private void OnEnable()
     {
-        tagStoring = gameObject.tag;
         if(type != null)
         {
             health = type.MaxHealth;
@@ -122,7 +112,6 @@ public abstract class Creep : MonoBehaviour
 
     private void OnDisable()
     {
-        gameObject.tag = tagStoring;
         SetCollider(true);
     }
 
@@ -241,8 +230,6 @@ public abstract class Creep : MonoBehaviour
             animator.SetTrigger("getDamage");
         }
     }
-
-
 
     /** Sử dụng để tạo hiệu ứng hiển thị vột vòng tròn damage tác động lên main */
     private void OnDrawGizmosSelected()

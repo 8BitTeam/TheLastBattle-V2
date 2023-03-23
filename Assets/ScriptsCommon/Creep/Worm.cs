@@ -7,8 +7,11 @@ public class Worm : Creep
 {
     protected override void InitSubClass()
     {
+        GameConfigModel.Creep.Worm configWorm = ScreenHelper.LoadConfig().creep.worm;
         // Lấy type từ Factory
-        type = TypeFactory.Instance.GetCreepType("worm", 5, 25, 2, 3, 1, 50, 0.5f);
+        type = TypeFactory.Instance.GetCreepType("worm", configWorm.damage,
+            configWorm.maxDistanceWithCamera, configWorm.speed, configWorm.radiusAreaMoving,
+            configWorm.standDuration, configWorm.maxHealth, configWorm.attackRange);
         health = type.MaxHealth;
     }
 
